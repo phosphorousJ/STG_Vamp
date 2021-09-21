@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //左右の移動できる範囲
-    private float movableRange = 6.4f;
-
+    #region//インスペクター設定
     //P_NomalAttackPrefab（コウモリ）を入れる
     public GameObject P_NomalAttackPrefab;
 
@@ -18,6 +16,12 @@ public class PlayerController : MonoBehaviour
 
     //P_R_SkillAttackPrefab（R攻撃）を入れる
     public GameObject P_R_SkillAttackPrefab;
+    #endregion
+
+
+    #region//プライベート変数
+    //左右の移動できる範囲
+    private float movableRange = 6.4f;
 
     //コウモリの生成位置
     private float nStartPosY = -5.0f;
@@ -34,6 +38,7 @@ public class PlayerController : MonoBehaviour
     //R攻撃の生成位置
     private float rStartPosY = -7.0f;
     private float rStartPosZ = -6.0f;
+    #endregion
 
 
     // Start is called before the first frame update

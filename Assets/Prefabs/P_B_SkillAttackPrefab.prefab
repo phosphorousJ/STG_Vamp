@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6449287541248861633}
   - component: {fileID: 3333950617855176332}
   m_Layer: 0
-  m_Name: P_B_SkillAttack
+  m_Name: P_B_SkillAttackPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 100, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6449287541248861633
 Rigidbody:
@@ -123,3 +123,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bb6fdefaf9d594ebc0790145b7f1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: "\u9B54\u5F3E\u300C\u300D"
+  speed: 17
+  power: 200

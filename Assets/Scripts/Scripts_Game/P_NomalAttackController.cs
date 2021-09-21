@@ -2,35 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class P_NomalAttackController : MonoBehaviour
+public class P_NomalAttackController : P_AttackBaseController
 {
-    //コウモリの移動する速度
-    private float upSpeed = 25.0f;
-
-
-    // Start is called before the first frame update
-    void Start()
+    //コウモリ攻撃の移動処理
+    protected override void FixedUpdate()
     {
-
+        base.FixedUpdate();
     }
 
 
-    // Update is called once per frame
-    void FixedUpdate()
+    //コウモリ攻撃の衝突処理
+    protected override void OnTriggerEnter(Collider other)
     {
-        //コウモリを移動させる
-        transform.Translate(0, 0, upSpeed * Time.deltaTime);
-    }
-
-
-    //コウモリの衝突処理
-    void OnTriggerEnter(Collider other)
-    {
-        //Enemyの場合
-        if (other.gameObject.tag == "Enemy_FLMTag")
-        {
-            Destroy(this.gameObject);
-            Debug.Log("通常攻撃破棄");
-        }
+        base.OnTriggerEnter(other);
     }
 }

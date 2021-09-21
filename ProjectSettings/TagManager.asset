@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy_FLMTag
+  - PlayerTag
+  - E_NomalAttackTag
   layers:
   - Default
   - TransparentFX
