@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E_NomalAttackController : E_NomalAttackBaseController
+public class E_B_MPBulletController : MPBulletBaseController
 {
-    //通常攻撃の移動処理
+    //青弾の移動処理
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
     }
 
 
-    //通常攻撃の衝突処理
+    //青弾の衝突処理
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);

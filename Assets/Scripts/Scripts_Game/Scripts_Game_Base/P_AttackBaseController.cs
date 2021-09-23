@@ -11,6 +11,7 @@ public class P_AttackBaseController : MonoBehaviour
     #endregion
 
     #region//プライベート変数
+    //相殺したE_NomalAttackの初期個数
     private int eNomalAttackNum = 0;
     #endregion
 
@@ -52,13 +53,6 @@ public class P_AttackBaseController : MonoBehaviour
 
             Destroy(this.gameObject);
             Debug.Log("Enemyに" + name + "を攻撃!!"+ damage +"ダメージ!!");
-        }
-
-        //Playerの場合
-        if (other.gameObject.tag == "PlayTag")
-        {
-            Destroy(this.gameObject);
-            Debug.Log("Playerに" + name + "を攻撃!!" + power + "ダメージ!!");
         }
     }
 }

@@ -7,6 +7,9 @@ TagManager:
   - Enemy_FLMTag
   - PlayerTag
   - E_NomalAttackTag
+  - E_B_MPBulletTag
+  - E_G_MPBulletTag
+  - E_R_MPBulletTag
   layers:
   - Default
   - TransparentFX
