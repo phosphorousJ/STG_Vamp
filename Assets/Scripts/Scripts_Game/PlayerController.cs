@@ -9,14 +9,14 @@ public class PlayerController : MonoBehaviour
     //P_B_SkillAttackPrefab（B攻撃）を入れる
     public GameObject P_B_SkillAttackPrefab;
 
-    //E_B_MPBulletPrefab（青弾）に衝突した回数
-    public int bMPCount = 0;
-
     //P_B_SkillStockPane（青弾の親オブジェクト）を入れる
     public GameObject P_B_SkillStockPanel;
 
     //青弾のストック配列
     public GameObject[] bMPImages;
+
+    //E_B_MPBulletPrefab（青弾）に衝突した回数
+    private int bMPCount = 0;
 
     //B攻撃の生成位置
     private float bStartPosY = -5.0f;
@@ -40,14 +40,14 @@ public class PlayerController : MonoBehaviour
     //P_G_SkiilAttackPrefab（G攻撃）を入れる
     public GameObject P_G_SkiilAttackPrefab;
 
-    //E_G_MPBulletPrefab（緑弾）に衝突した回数
-    public int gMPCount = 0;
-
     //P_G_SkillStockPane（緑弾の親オブジェクト）を入れる
     public GameObject P_G_SkillStockPanel;
 
     //緑弾のストック配列
     public GameObject[] gMPImages;
+
+    //E_G_MPBulletPrefab（緑弾）に衝突した回数
+    private int gMPCount = 0;
 
     //G攻撃の生成位置
     private float gStartPosY = -5.0f;
@@ -71,14 +71,14 @@ public class PlayerController : MonoBehaviour
     //P_R_SkillAttackPrefab（R攻撃）を入れる
     public GameObject P_R_SkillAttackPrefab;
 
-    //E_R_MPBulletPrefab（赤弾）に衝突した回数
-    public int rMPCount = 0;
-
     //P_R_SkillStockPane（赤弾の親オブジェクト）を入れる
     public GameObject P_R_SkillStockPanel;
 
     //赤弾のストック配列
     public GameObject[] rMPImages;
+
+    //E_R_MPBulletPrefab（赤弾）に衝突した回数
+    private int rMPCount = 0;
 
     //R攻撃の生成位置
     private float rStartPosY = -7.0f;

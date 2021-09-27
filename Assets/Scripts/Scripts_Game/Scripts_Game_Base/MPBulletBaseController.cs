@@ -44,7 +44,7 @@ public class MPBulletBaseController : MonoBehaviour
         if (other.gameObject.tag == "PlayerTag")
         {
             Destroy(this.gameObject);
-            Debug.Log(name + "を破棄");
+            Debug.Log(name + "を入手");
         }
     }
 }

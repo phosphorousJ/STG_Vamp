@@ -138,5 +138,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: "\u9B54\u69CD\u300C\u53CC\u8840\u306E\u7A7F\u901A\uFF08\u30C4\u30FB\u30AF\u30EB\u30B0\u30EA\u30FC\u30C9\uFF09\u300D"
-  speed: 10
+  speed: 12.5
   power: 1000

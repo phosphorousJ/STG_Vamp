@@ -10,6 +10,7 @@ TagManager:
   - E_B_MPBulletTag
   - E_G_MPBulletTag
   - E_R_MPBulletTag
+  - BackWallTag
   layers:
   - Default
   - TransparentFX

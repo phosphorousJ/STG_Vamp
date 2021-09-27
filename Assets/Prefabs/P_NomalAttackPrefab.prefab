@@ -125,4 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "\u7FA4\u5098\uFF08\u30B7\u30EB\u30D0\u30E0\uFF09"
   speed: 25
-  power: 10
+  power: 50
