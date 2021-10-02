@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class EnemyHealthBase: MonoBehaviour
 {
     #region//インスペクター設定
-    [SerializeField][Header("体力")] int enemyHP;
-    [SerializeField][Header("被ダメ軽減割合")] float decreaseDamageRate;
+    [SerializeField] [Header("体力")] int enemyHP;
+    [SerializeField] [Header("被ダメ軽減割合")] float decreaseDamageRate;
     #endregion
 
     //EnemyHPSlider（HPバー）を入れる

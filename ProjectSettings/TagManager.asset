@@ -11,6 +11,8 @@ TagManager:
   - E_G_MPBulletTag
   - E_R_MPBulletTag
   - BackWallTag
+  - E_FLM_SkillAttack0Tag
+  - E_FLM_SkillAttack1Tag
   layers:
   - Default
   - TransparentFX

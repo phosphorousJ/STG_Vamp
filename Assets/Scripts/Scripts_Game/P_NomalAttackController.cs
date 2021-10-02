@@ -5,9 +5,9 @@ using UnityEngine;
 public class P_NomalAttackController : MonoBehaviour
 {
     #region//インスペクター設定
-    [SerializeField][Header("武器名称")] new string name;
-    [SerializeField][Header("移動速度")] float speed;
-    [SerializeField][Header("攻撃威力")] int power;
+    [SerializeField] [Header("武器名称")] new string name;
+    [SerializeField] [Header("移動速度")] float speed;
+    [SerializeField] [Header("攻撃威力")] int power;
     #endregion
 
 
