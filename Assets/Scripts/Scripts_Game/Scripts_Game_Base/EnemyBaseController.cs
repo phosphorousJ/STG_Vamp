@@ -36,14 +36,10 @@ public class EnemyBaseController : MonoBehaviour
 
     //経過時間
     private float time = 0.0f;
+
+    //攻撃開始時間
+    private float attackTime;
     #endregion
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
 
     // Update is called once per frame
@@ -51,8 +47,13 @@ public class EnemyBaseController : MonoBehaviour
     {
         //時間計測
         time += Time.deltaTime;
+        attackTime += Time.deltaTime;
 
-        GenAttack();
+        //5秒後に攻撃開始
+        if (5.0 <= attackTime)
+        {
+            GenAttack();
+        }
     }
 
 
@@ -60,7 +61,7 @@ public class EnemyBaseController : MonoBehaviour
     protected virtual void GenAttack()
     {
         //経過時間が生成時間間隔より大きいとき、攻撃
-        if (time > intervalTime)
+        if (intervalTime < time)
         {
             GenAttackKind();
 

@@ -12,22 +12,13 @@ public class P_LifeController : MonoBehaviour
     public GameObject[] lifeImages;
 
     //Enemyの攻撃に被弾した回数
-    private int eAttackCount = 0;
-
-    //現在の残機数
-    private int currentLifeNull = 5;
+    public static int eAttackCount = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        decreaseLifeImages();
     }
 
 
@@ -36,20 +27,13 @@ public class P_LifeController : MonoBehaviour
     {
         if (other.gameObject.tag == "E_NomalAttackTag")
         {
-            if (1 <= currentLifeNull && currentLifeNull <= 5)
-            {
-                //被弾回数を更新
-                eAttackCount++;
+            eAttackCount += 1;
+            decreaseLifeImages();
+        }
 
-                decreaseLifeImages();
-
-                //被弾回数をリセット
-                eAttackCount = 0;
-            }
-            else if (currentLifeNull == 0)
-            {
-                Debug.Log("残機数が0です。");
-            }
+        if (eAttackCount == 5)
+        {
+            Debug.Log("残機が0です。");
         }
     }
 
@@ -57,8 +41,17 @@ public class P_LifeController : MonoBehaviour
     //残機のストックを更新（減少）する関数
     void decreaseLifeImages()
     {
-        currentLifeNull -= eAttackCount;
-        lifeImages[currentLifeNull].SetActive(false);
-        Debug.Log("残機数:" + currentLifeNull);
+        for (int i = 0; i < lifeImages.Length; i++)
+        {
+            if (eAttackCount <= i)
+            {
+                lifeImages[i].SetActive(true);
+            }
+            else
+            {
+                lifeImages[i].SetActive(false);
+            }
+        }
+
     }
 }

@@ -126,3 +126,5 @@ MonoBehaviour:
   name: "\u7FA4\u5098\uFF08\u30B7\u30EB\u30D0\u30E0\uFF09"
   speed: 25
   power: 50
+  E_N_ParticleSystemPrefab: {fileID: 2997063055680617645, guid: d7a1692c72294d645b2cc79c40eeef63,
+    type: 3}

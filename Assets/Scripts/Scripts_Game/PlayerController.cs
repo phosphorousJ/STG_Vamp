@@ -114,6 +114,18 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
+    #region//パーティクル設定
+    //P_B_ParticleSystemPrefabを入れる
+    public GameObject P_B_ParticleSystemPrefab;
+
+    //P_G_ParticleSystemPrefabを入れる
+    public GameObject P_G_ParticleSystemPrefab;
+
+    //P_R_ParticleSystemPrefabを入れる
+    public GameObject P_R_ParticleSystemPrefab;
+    #endregion
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -239,6 +251,14 @@ public class PlayerController : MonoBehaviour
         //青弾の場合
         if (other.gameObject.tag == "E_B_MPBulletTag")
         {
+            //衝突位置を取得
+            Vector3 hitPosB = other.ClosestPointOnBounds(this.transform.position);
+
+            //パーティクルの表示処理
+            var particleB = Instantiate(P_B_ParticleSystemPrefab, hitPosB, Quaternion.identity);
+            var particleSystemB = particleB.GetComponent<ParticleSystem>();
+            particleSystemB.Play();
+
             if (current_bMPBulletNull < 3)
             {
                 //衝突回数を更新
@@ -261,6 +281,14 @@ public class PlayerController : MonoBehaviour
         //緑弾の場合
         if (other.gameObject.tag == "E_G_MPBulletTag")
         {
+            //衝突位置を取得
+            Vector3 hitPosG = other.ClosestPointOnBounds(this.transform.position);
+
+            //パーティクルの表示処理
+            var particleG = Instantiate(P_G_ParticleSystemPrefab, hitPosG, Quaternion.identity);
+            var particleSystemG = particleG.GetComponent<ParticleSystem>();
+            particleSystemG.Play();
+
             if (current_gMPBulletNull < 3)
             {
                 //衝突回数を更新
@@ -283,6 +311,14 @@ public class PlayerController : MonoBehaviour
         //赤弾の場合
         if (other.gameObject.tag == "E_R_MPBulletTag")
         {
+            //衝突位置を取得
+            Vector3 hitPosR = other.ClosestPointOnBounds(this.transform.position);
+
+            //パーティクルの表示処理
+            var particleR = Instantiate(P_R_ParticleSystemPrefab, hitPosR, Quaternion.identity);
+            var particleSystemR = particleR.GetComponent<ParticleSystem>();
+            particleSystemR.Play();
+
             if (current_rMPBulletNull < 3)
             {
                 //衝突回数を更新

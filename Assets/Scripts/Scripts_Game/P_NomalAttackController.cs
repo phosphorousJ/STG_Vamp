@@ -10,6 +10,11 @@ public class P_NomalAttackController : MonoBehaviour
     [SerializeField] [Header("攻撃威力")] int power;
     #endregion
 
+    #region//インスペクター設定
+    //E_N_ParticleSystemPrefabを入れる
+    public GameObject E_N_ParticleSystemPrefab;
+    #endregion
+
 
     //コウモリ攻撃の移動処理
     void FixedUpdate()
@@ -28,11 +33,23 @@ public class P_NomalAttackController : MonoBehaviour
             //ダメージ計算
             int damage = power;
 
-            //EnemyHealthBaseスクリプトのSetDamage関数にダメージ値を渡す
-            other.gameObject.GetComponent<EnemyHealthBase>().SetDamage(damage);
+            GManager.instance.damage0 = damage;
+            GManager.instance.damage1 = damage;
 
             Destroy(this.gameObject);
             Debug.Log("Enemyに" + name + "を攻撃!!" + damage + "ダメージ!!");
+        }
+
+        //Enemyの場合
+        if (other.gameObject.tag == "EnemyTag")
+        {
+            //衝突位置を取得
+            Vector3 hitPosN = other.ClosestPointOnBounds(this.transform.position);
+
+            //パーティクルの表示処理
+            var particleN = Instantiate(E_N_ParticleSystemPrefab, hitPosN, Quaternion.identity);
+            var particleSystemN = particleN.GetComponent<ParticleSystem>();
+            particleSystemN.Play();
         }
     }
 }

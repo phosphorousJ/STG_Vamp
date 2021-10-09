@@ -15,6 +15,14 @@ public class P_B_SkillAttackController : MonoBehaviour
     private int eNomalAttackNum = 0;
     #endregion
 
+    #region//インスペクター設定
+    //E_R_ParticleSystemPrefabを入れる
+    public GameObject E_B_ParticleSystemPrefab;
+
+    //P_N_ParticleSystemPrefabを入れる
+    public GameObject P_N_ParticleSystemPrefab;
+    #endregion
+
 
     //B攻撃の移動処理
     void FixedUpdate()
@@ -30,6 +38,14 @@ public class P_B_SkillAttackController : MonoBehaviour
         //通常攻撃（Enemy）の場合
         if (other.gameObject.tag == "E_NomalAttackTag")
         {
+            //衝突位置を取得
+            Vector3 hitPos = other.ClosestPointOnBounds(this.transform.position);
+
+            //パーティクルの表示処理
+            var particleN = Instantiate(P_N_ParticleSystemPrefab, hitPos, Quaternion.identity);
+            var particleSystemN = particleN.GetComponent<ParticleSystem>();
+            particleSystemN.Play();
+
             //E_NomalAttackを相殺
             Destroy(other.gameObject);
             Debug.Log("Enemyの攻撃を相殺");
@@ -49,20 +65,32 @@ public class P_B_SkillAttackController : MonoBehaviour
             {
                 int timesDamage = 2 * damage;
 
-                //EnemyHealthBaseスクリプトのSetDamage関数にダメージ値を渡す
-                other.gameObject.GetComponent<EnemyHealthBase>().SetDamage(timesDamage);
+                GManager.instance.damage0 = timesDamage;
+                GManager.instance.damage1 = timesDamage;
 
                 Destroy(this.gameObject);
                 Debug.Log("Enemyに" + name + "を攻撃!!" + timesDamage + "ダメージ!!");
             }
             else
             {
-                //EnemyHealthBaseスクリプトのSetDamage関数にダメージ値を渡す
-                other.gameObject.GetComponent<EnemyHealthBase>().SetDamage(damage);
+                GManager.instance.damage0 = damage;
+                GManager.instance.damage1 = damage;
 
                 Destroy(this.gameObject);
                 Debug.Log("Enemyに" + name + "を攻撃!!" + damage + "ダメージ!!");
             }
+        }
+
+        //Enemyの場合
+        if (other.gameObject.tag == "EnemyTag")
+        {
+            //衝突位置を取得
+            Vector3 hitPosE = other.ClosestPointOnBounds(this.transform.position);
+
+            //パーティクルの表示処理
+            var particleE = Instantiate(E_B_ParticleSystemPrefab, hitPosE, Quaternion.identity);
+            var particleSystemE = particleE.GetComponent<ParticleSystem>();
+            particleSystemE.Play();
         }
     }
 }

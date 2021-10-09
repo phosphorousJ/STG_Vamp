@@ -15,6 +15,13 @@ public class P_R_SkillAttackController : MonoBehaviour
     private int eNomalAttackNum = 0;
     #endregion
 
+    #region//インスペクター設定
+    //E_R_ParticleSystemPrefabを入れる
+    public GameObject E_R_ParticleSystemPrefab;
+
+    //P_N_ParticleSystemPrefabを入れる
+    public GameObject P_N_ParticleSystemPrefab;
+    #endregion
 
     //R攻撃の移動処理
     void FixedUpdate()
@@ -30,6 +37,14 @@ public class P_R_SkillAttackController : MonoBehaviour
         //通常攻撃（Enemy）の場合
         if (other.gameObject.tag == "E_NomalAttackTag")
         {
+            //衝突位置を取得
+            Vector3 hitPos = other.ClosestPointOnBounds(this.transform.position);
+
+            //パーティクルの表示処理
+            var particleN = Instantiate(P_N_ParticleSystemPrefab, hitPos, Quaternion.identity);
+            var particleSystemN = particleN.GetComponent<ParticleSystem>();
+            particleSystemN.Play();
+
             //E_NomalAttackを相殺
             Destroy(other.gameObject);
             Debug.Log("Enemyの攻撃を相殺");
@@ -44,25 +59,41 @@ public class P_R_SkillAttackController : MonoBehaviour
             //ダメージ計算
             int damage = power - 50 * eNomalAttackNum;
 
-            //BackWallが青色の場合
+            //BackWallが赤色の場合
             if (other.gameObject.GetComponent<Renderer>().material.color == Color.red)
             {
                 int timesDamage = 2 * damage;
 
-                //EnemyHealthBaseスクリプトのSetDamage関数にダメージ値を渡す
-                other.gameObject.GetComponent<EnemyHealthBase>().SetDamage(timesDamage);
+                GManager.instance.damage0 = timesDamage;
+                GManager.instance.damage1 = timesDamage;
 
                 Destroy(this.gameObject);
                 Debug.Log("Enemyに" + name + "を攻撃!!" + timesDamage + "ダメージ!!");
             }
             else
             {
-                //EnemyHealthBaseスクリプトのSetDamage関数にダメージ値を渡す
-                other.gameObject.GetComponent<EnemyHealthBase>().SetDamage(damage);
+                GManager.instance.damage0 = damage;
+                GManager.instance.damage1 = damage;
 
                 Destroy(this.gameObject);
                 Debug.Log("Enemyに" + name + "を攻撃!!" + damage + "ダメージ!!");
             }
+        }
+
+        //Enemyの場合
+        if (other.gameObject.tag == "EnemyTag")
+        {
+            //パーティクルをインスタンス生成
+            var particleL = Instantiate(E_R_ParticleSystemPrefab, new Vector3(3.2f, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+            var particleR = Instantiate(E_R_ParticleSystemPrefab, new Vector3(-3.2f, this.transform.position.y, this.transform.position.z), Quaternion.identity);
+
+            //ParticleSystemを取得
+            var particleSystemL = particleL.GetComponent<ParticleSystem>();
+            var particleSystemR = particleR.GetComponent<ParticleSystem>();
+
+            //パーティクルを表示
+            particleSystemL.Play();
+            particleSystemR.Play();
         }
     }
 }

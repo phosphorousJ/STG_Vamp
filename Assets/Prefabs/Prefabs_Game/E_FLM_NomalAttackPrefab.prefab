@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7002964635274259457}
   - component: {fileID: 5670551611223372666}
   m_Layer: 0
-  m_Name: E_NomalAttackPrefab
+  m_Name: E_FLM_NomalAttackPrefab
   m_TagString: E_NomalAttackTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

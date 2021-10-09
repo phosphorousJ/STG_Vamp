@@ -18,7 +18,7 @@ public class BackWallColorController : MonoBehaviour
     void Start()
     {
         //オブジェクトにアタッチしているMaterialを取得
-        this.myMaterial = GetComponent<Renderer>().material;
+        myMaterial = GetComponent<Renderer>().material;
     }
 
 
@@ -47,6 +47,6 @@ public class BackWallColorController : MonoBehaviour
         Color color = colors[Random.Range(0, colors.Length)];
 
         //取得した色に設定
-        this.GetComponent<Renderer>().material.color = color;
+        myMaterial.color = color;
     }
 }

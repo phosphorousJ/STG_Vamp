@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyHealthBase: MonoBehaviour
 {
     #region//インスペクター設定
-    [SerializeField] [Header("体力")] int enemyHP;
+    [SerializeField] [Header("体力")] public int enemyHP;
     [SerializeField] [Header("被ダメ軽減割合")] float decreaseDamageRate;
     #endregion
 
@@ -14,27 +14,31 @@ public class EnemyHealthBase: MonoBehaviour
     public Slider EnemyHPSlider;
 
     //Enemyの現在のHP
-    protected float currentHP;
+    public float currentHP;
 
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         //HPバーを満タンにする
         EnemyHPSlider.value = 1;
-
-        //現在のHPを最大値に設定
-        currentHP = enemyHP;
     }
 
 
-    //Enemyの被ダメージ値を取得する関数
-    public void SetDamage(int enemyDamage)
+    protected virtual void Update()
     {
-        //現在のHPを更新
-        currentHP -= enemyDamage * decreaseDamageRate;
+        if (GManager.instance.damage0 != 0)
+        {
+            //現在のHPを更新
+            currentHP -= GManager.instance.damage0 * decreaseDamageRate;
 
-        //HPバーを更新
-        EnemyHPSlider.value = currentHP / enemyHP;
+            Debug.Log("Enemyの体力:" + currentHP);
+
+            //HPバーを更新
+            EnemyHPSlider.value = currentHP / enemyHP;
+
+            //被ダメージをリセット
+            GManager.instance.damage0 = 0;
+        }
     }
 }

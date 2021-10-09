@@ -6,12 +6,51 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TitleScene.unity
+    path: Assets/Scenes/Scenes_Another/TitleScene.unity
     guid: 2068ef0f912092345aa76e34c19d7d9a
   - enabled: 1
-    path: Assets/Scenes/GameScene0.unity
+    path: Assets/Scenes/Scenes_Story/TalkScene0_0.unity
+    guid: f6260bd946a5d68489893fbf11d55908
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Story/TalkScene0_1.unity
+    guid: 37f08773df7235e4b919e51b1df00582
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/GameStartScene0.unity
+    guid: 3ef550abff72a0a46b32d943e602f7ae
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Game/GameScene0_0.unity
     guid: 32c5437fc813c9849bbe0719791cd97d
   - enabled: 1
-    path: Assets/Scenes/GameOverScene0.unity
+    path: Assets/Scenes/Scenes_GameOver/GameOverScene0.unity
     guid: ae3e3ee7335ecc04aa37e61e6c2a362a
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Story/TalkScene0_2.unity
+    guid: 2c909e9fe91bae14cbacecf74928a145
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Game/GameSubScene0_0.unity
+    guid: dc8e6a302104d7d4281d00cf4b4e62a2
+  - enabled: 1
+    path: Assets/Scenes/Scenes_GameOver/GameOverScene0_0.unity
+    guid: edd084edf0d1b2247847f3df742ac93f
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Game/GameScene0_1.unity
+    guid: fda33711707767e429903a4c63afc483
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Story/TalkScene0_3.unity
+    guid: f95b7597ecf72f24aaa208a38f125630
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/GameStartScene0_1_1.unity
+    guid: 26a54e0dabff8e14eb2610b1b6a30db4
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/GameStartScene0_1_2.unity
+    guid: b7e7b52c89f22724eb7c66513bd16cd0
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Game/GameSubScene0_1.unity
+    guid: 19ad0a8445f4a0e44a24a0f3ba3b7e51
+  - enabled: 1
+    path: Assets/Scenes/Scenes_GameOver/GameOverScene0_1.unity
+    guid: d955bc09cdd23294aa3bbfea259ad6ab
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Game/GameScene0_2.unity
+    guid: 81b6b88a82e1c4b4798a656ec14af13b
   m_configObjects: {}
