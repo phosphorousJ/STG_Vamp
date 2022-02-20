@@ -42,8 +42,11 @@ public class E_FLM_SkillAttack0Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GManager.instance.eSkill0 = true;
+        Debug.Log("FLMが大技0を発動!");
+
         //コルーチン開始
-        StartCoroutine(SkillAttack0_0());
+        StartCoroutine(SkillAttack0_4());
     }
 
 
@@ -223,7 +226,7 @@ public class E_FLM_SkillAttack0Manager : MonoBehaviour
         Instantiate(E_FLM_SkillAttack0_2_EPrefab, new Vector3(3.5f, 0, -0.05f), Quaternion.Euler(0, 0, -180));
 
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene("GameScene0_1");
+        SceneManager.LoadScene("GameScene0_0");
         Debug.Log("鎌技「虚偽」を終了");
     }
     #endregion

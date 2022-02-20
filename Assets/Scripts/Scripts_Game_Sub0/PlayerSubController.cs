@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSubController : MonoBehaviour
 {
@@ -72,11 +73,13 @@ public class PlayerSubController : MonoBehaviour
     {
         if (other.gameObject.tag == "E_FLM_SkillAttack0Tag")
         {
+            SceneManager.LoadScene("GameOverSubScene0_0");
             Debug.Log("大鎌に衝突");
         }
 
         if (other.gameObject.tag == "E_FLM_SkillAttack1Tag")
         {
+            SceneManager.LoadScene("GameOverSubScene0_1");
             Debug.Log("羽に衝突");
         }
     }

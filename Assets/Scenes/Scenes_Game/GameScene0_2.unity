@@ -575,7 +575,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dbf60ad95860101499c5e36306a493ef, type: 2}
+  - {fileID: 2100000, guid: 0689493b065e8104eadccd54d2a619de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -907,7 +907,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 403170453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6bf7b78c467dc4aa2a30ad66650b86, type: 3}
+  m_Script: {fileID: 11500000, guid: 49ebbc6b37475354ea9dae66249c4af3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   P_LifeStockPanel: {fileID: 979474215}
@@ -1669,7 +1669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u300C\u5929\u300D"
 --- !u!222 &940578012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2887,7 +2887,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "\u9B54\u5F3E"
 --- !u!222 &1768462699
 CanvasRenderer:
   m_ObjectHideFlags: 0

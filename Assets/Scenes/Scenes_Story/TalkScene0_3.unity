@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.20061573, g: 0.20333138, b: 0.20369378, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 7e3c2da119cba7b47bca8417468a661c,
+  m_LightingDataAsset: {fileID: 112000000, guid: 37500cb736c3f0345ba0d679634555c2,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 446804151}
   - component: {fileID: 446804150}
   m_Layer: 5
-  m_Name: TalkText
+  m_Name: EnemyTalkText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,10 +262,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f8cd934b8753aca479a33dd27efb3544, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -553,7 +553,7 @@ RectTransform:
   m_GameObject: {fileID: 700376383}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1858265829}
   m_RootOrder: 1
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 734f804d1a22a274fb4d62b1d419b1fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a09f63cb11d00f40ae8ea9d9f6a5f0f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -692,6 +692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1070543771}
+  - component: {fileID: 1070543772}
   m_Layer: 0
   m_Name: TalkObject
   m_TagString: Untagged
@@ -713,6 +714,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1070543772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070543770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235f20746bb53504ca6e137bacc93477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textEnemy: {fileID: 446804151}
+  textPlayer: {fileID: 1212206616}
 --- !u!1 &1097378450
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +833,7 @@ GameObject:
   - component: {fileID: 1212206616}
   - component: {fileID: 1212206615}
   m_Layer: 5
-  m_Name: TalkText
+  m_Name: PlayerTalkText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,10 +894,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f8cd934b8753aca479a33dd27efb3544, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GManager : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class GManager : MonoBehaviour
 
     //Enemyの総被ダメージ
     public int sumDamage;
+
+    //playerの被弾回数
+    public int eAttackCount;
+
+    //Enemyが大技を発動したのか判定
+    public bool eSkill0 = false;
+    public bool eSkill1 = false;
 
 
     //シングルトンの実装

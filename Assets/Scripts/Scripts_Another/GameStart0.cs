@@ -18,6 +18,6 @@ public class GameStart0 : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
 
-        FadeManager.Instance.LoadScene("GameScene0_0", 2.0f);
+        FadeManager.Instance.LoadScene("TalkScene0_1", 2.0f);
     }
 }

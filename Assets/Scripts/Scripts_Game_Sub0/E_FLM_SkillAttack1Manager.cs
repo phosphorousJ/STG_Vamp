@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class E_FLM_SkillAttack1Manager : MonoBehaviour
 {
@@ -41,8 +42,11 @@ public class E_FLM_SkillAttack1Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GManager.instance.eSkill1 = true;
+        Debug.Log("FLMが大技1を発動!");
+
         //コルーチン開始
-        StartCoroutine(SkillAttack1_0());
+        StartCoroutine(SkillAttack1_4());
     }
 
 
@@ -226,6 +230,8 @@ public class E_FLM_SkillAttack1Manager : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
 
+        yield return new WaitForSeconds(2.0f);
+        SceneManager.LoadScene("TalkScene0_4");
         Debug.Log("己心「積羽沈舟」を終了");
     }
     #endregion

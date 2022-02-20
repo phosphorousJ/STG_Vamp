@@ -575,7 +575,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dbf60ad95860101499c5e36306a493ef, type: 2}
+  - {fileID: 2100000, guid: 894e2c0d90a9b3143855d964831b6412, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2168,6 +2168,9 @@ MonoBehaviour:
   damage0: 0
   damage1: 0
   sumDamage: 0
+  defaultHeartNum: 5
+  heartNum: 0
+  isGameOver: 0
 --- !u!1 &1340547624
 GameObject:
   m_ObjectHideFlags: 0
