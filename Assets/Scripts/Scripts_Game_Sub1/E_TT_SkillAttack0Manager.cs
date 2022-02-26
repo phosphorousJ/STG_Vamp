@@ -28,6 +28,9 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GManager.instance.TT_Skill0 = true;
+        Debug.Log("TTが大技0を発動!");
+
         //コルーチン開始
         StartCoroutine(SkillAttack0_0());
     }
@@ -70,7 +73,7 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
         Instantiate(E_TT_SkillAttack0_3Prefab, new Vector3(-3.5f, player.y, -0.05f), Quaternion.Euler(0, 0, -90));
         GSubManager.instance.TT_SkillAttack0_3PosX = -3.5f;
 
-        yield return waitOneS;
+        yield return waitOneHalfS;
         GSubManager.instance.TT_SkillAttack0_3PosX = 0.0f;
 
         //刺突斬りE
@@ -168,7 +171,7 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
         Instantiate(E_TT_SkillAttack0_3Prefab, new Vector3(player.x, -3.5f, -0.05f), Quaternion.identity);
         GSubManager.instance.TT_SkillAttack0_3PosY = -3.5f;
 
-        yield return waitOneS;
+        yield return waitOneHalfS;
         GSubManager.instance.TT_SkillAttack0_3PosY = 0.0f;
 
         //刺突斬りN
@@ -176,7 +179,7 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
         Instantiate(E_TT_SkillAttack0_3Prefab, new Vector3(player.x, 3.5f, -0.05f), Quaternion.Euler(0, 0, 180));
         GSubManager.instance.TT_SkillAttack0_3PosY = 3.5f;
 
-        yield return waitOneS;
+        yield return waitOneHalfS;
         GSubManager.instance.TT_SkillAttack0_3PosY = 0.0f;
 
         //刺突E
@@ -271,16 +274,6 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
         Debug.Log("真道裏念流 縮地 破ノ型「参命剣」を終了");
-    }
-    #endregion
-
-    #region//4:刹殺N、刹殺、刹殺、刹殺
-    IEnumerator SkillAttack0_4()
-    {
-        yield return new WaitForSeconds(2.0f);
-
-        //刹殺N
-
     }
     #endregion
 }

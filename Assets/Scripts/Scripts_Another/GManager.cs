@@ -20,8 +20,14 @@ public class GManager : MonoBehaviour
     public int eAttackCount;
 
     //Enemyが大技を発動したのか判定
-    public bool eSkill0 = false;
-    public bool eSkill1 = false;
+    public bool FLM_Skill0 = false;
+    public bool FLM_Skill1 = false;
+
+    public bool TT_Skill0 = false;
+    public bool TT_Skill1 = false;
+
+    public bool BK_Skill0 = false;
+    public bool BK_Skill1 = false;
 
 
     //シングルトンの実装

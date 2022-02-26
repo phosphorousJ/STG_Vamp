@@ -14,7 +14,21 @@ public class Button_Retry0_0 : MonoBehaviour
         {
             Debug.Log("Retry!!");
 
-            SceneManager.LoadScene("GameScene0_0");
+            if (0 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 20000)
+            {
+                SceneManager.LoadScene("GameScene0_0");
+                Debug.Log("通常0");
+            }
+            else if (20000 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 40000)
+            {
+                SceneManager.LoadScene("GameScene0_0");
+                Debug.Log("通常1");
+            }
+            else if (40000 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 60000)
+            {
+                SceneManager.LoadScene("GameScene0_0");
+                Debug.Log("通常2");
+            }
 
             firstPush = true;
         }

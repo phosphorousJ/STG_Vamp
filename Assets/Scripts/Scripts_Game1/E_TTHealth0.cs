@@ -5,10 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class E_TTHealth0 : EnemyHealthBase
 {
-    //大技が発動したのかを判定
-    private bool enemySkill_0 = false;
-
-
     protected override void Start()
     {
         base.Start();
@@ -16,7 +12,7 @@ public class E_TTHealth0 : EnemyHealthBase
         InvokeRepeating("GetRandomDecreaseDamageRate", 0.0f, 1.0f);
 
         //現在のHPを最大値に設定
-        currentHP = enemyHP;
+        currentHP = enemyHP - GManager.instance.sumDamage;
     }
 
 
@@ -25,15 +21,26 @@ public class E_TTHealth0 : EnemyHealthBase
     {
         base.Update();
 
-        if (8000 < currentHP && currentHP <= 10000)
+        if (8000 < currentHP && currentHP <= 10000 && GManager.instance.TT_Skill0 == false)
         {
-            if (!enemySkill_0)
+            if (!GManager.instance.TT_Skill0)
             {
-                enemySkill_0 = true;
+                
 
                 
-                Debug.Log("TTが大技0を発動!!");
+                Debug.Log("TTが大技0を準備");
             }
+        }
+        else if (0 < currentHP && currentHP <= 1500 && GManager.instance.TT_Skill1 == false)
+        {
+            if (!GManager.instance.TT_Skill1)
+            {
+                Debug.Log("TTが大技1(己心解錠)を準備");
+            }
+        }
+        else if (currentHP <= 0)
+        {
+            Debug.Log("TTの体力は0になった");
         }
     }
 

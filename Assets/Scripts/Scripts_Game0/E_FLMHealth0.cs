@@ -19,17 +19,17 @@ public class E_FLMHealth0 : EnemyHealthBase
     {
         base.Update();
 
-        if (20000 < currentHP && currentHP <= 40000 && GManager.instance.eSkill0 == false)
+        if (20000 < currentHP && currentHP <= 40000 && GManager.instance.FLM_Skill0 == false)
         {
-            if (!GManager.instance.eSkill0)
+            if (!GManager.instance.FLM_Skill0)
             {
                 SceneManager.LoadScene("TalkScene0_2");
                 Debug.Log("FLMが大技0を準備");
             }
         }
-        else if (0 < currentHP && currentHP <= 20000 && GManager.instance.eSkill1 == false)
+        else if (0 < currentHP && currentHP <= 20000 && GManager.instance.FLM_Skill1 == false)
         {
-            if (!GManager.instance.eSkill1)
+            if (!GManager.instance.FLM_Skill1)
             {
                 SceneManager.LoadScene("TalkScene0_3");
                 Debug.Log("FLMが大技1(己心解錠)を準備");

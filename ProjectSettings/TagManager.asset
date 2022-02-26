@@ -19,6 +19,9 @@ TagManager:
   - P_R_SkillAttackTag
   - EnemyTag
   - E_TT_SkillAttack0Tag
+  - E_TT_SkillAttack1Tag
+  - E_BK_SkillAttack0Tag
+  - E_BK_SkillAttack1Tag
   layers:
   - Default
   - TransparentFX

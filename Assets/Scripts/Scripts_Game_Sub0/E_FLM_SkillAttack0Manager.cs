@@ -42,7 +42,7 @@ public class E_FLM_SkillAttack0Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GManager.instance.eSkill0 = true;
+        GManager.instance.FLM_Skill0 = true;
         Debug.Log("FLMが大技0を発動!");
 
         //コルーチン開始

@@ -28,13 +28,6 @@ public class PlayerSubController : MonoBehaviour
     };
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
     // Update is called once per frame
     void Update()
     {
@@ -74,13 +67,33 @@ public class PlayerSubController : MonoBehaviour
         if (other.gameObject.tag == "E_FLM_SkillAttack0Tag")
         {
             SceneManager.LoadScene("GameOverSubScene0_0");
-            Debug.Log("大鎌に衝突");
+            Debug.Log("FLMの大技0に衝突");
         }
 
         if (other.gameObject.tag == "E_FLM_SkillAttack1Tag")
         {
             SceneManager.LoadScene("GameOverSubScene0_1");
-            Debug.Log("羽に衝突");
+            Debug.Log("FLMの己心に衝突");
+        }
+
+        if (other.gameObject.tag == "E_TT_SkillAttack0Tag")
+        {
+            Debug.Log("TTの大技0に衝突");
+        }
+
+        if (other.gameObject.tag == "E_TT_SkillAttack1Tag")
+        {
+            Debug.Log("TTの己心に衝突");
+        }
+
+        if (other.gameObject.tag == "E_BK_SkillAttack0Tag")
+        {
+            Debug.Log("BKの大技0に衝突");
+        }
+
+        if (other.gameObject.tag == "E_BK_SkillAttack1Tag")
+        {
+            Debug.Log("BKの己心に衝突");
         }
     }
 }
