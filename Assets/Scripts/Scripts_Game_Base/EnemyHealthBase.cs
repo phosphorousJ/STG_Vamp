@@ -22,6 +22,8 @@ public class EnemyHealthBase: MonoBehaviour
     {
         //HPバーを満タンにする
         EnemyHPSlider.value = 1;
+
+        GManager.instance.decreaseDamageRate0 = decreaseDamageRate;
     }
 
 

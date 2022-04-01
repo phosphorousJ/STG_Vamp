@@ -35,7 +35,7 @@ public class P_G_SkillAttackController : MonoBehaviour
     //G攻撃の衝突処理
     void OnTriggerEnter(Collider other)
     {
-        //通常攻撃（Enemy）の場合
+        //通常攻撃（Enemy）
         if (other.gameObject.tag == "E_NomalAttackTag")
         {
             //衝突位置を取得
@@ -48,19 +48,24 @@ public class P_G_SkillAttackController : MonoBehaviour
 
             //E_NomalAttackを相殺
             Destroy(other.gameObject);
-            Debug.Log("Enemyの攻撃を相殺");
 
             //相殺したE_NomalAttackの数を更新
             eNomalAttackNum++;
         }
 
-        //BackWallの場合
+        //通常攻撃（Enemy_BKとEnemy_MCの場合）
+        if (other.gameObject.tag == "E_BK_NomalAttackTag" || other.gameObject.tag == "E_MC_NomalAttackTag")
+        {
+            Destroy(this.gameObject);
+        }
+
+        //BackWall
         if (other.gameObject.tag == "BackWallTag")
         {
             //ダメージ計算
             int damage = power - 50 * eNomalAttackNum;
 
-            //BackWallが緑色の場合
+            //BackWallが緑色
             if (other.gameObject.GetComponent<Renderer>().material.color == Color.green)
             {
                 int timesDamage = 2 * damage;
@@ -81,7 +86,7 @@ public class P_G_SkillAttackController : MonoBehaviour
             }
         }
 
-        //Enemyの場合
+        //Enemy
         if (other.gameObject.tag == "EnemyTag")
         {
             //衝突位置を取得

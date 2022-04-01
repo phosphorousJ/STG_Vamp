@@ -25,7 +25,6 @@ public class E_NomalAttackBaseController : MonoBehaviour
         if (transform.position.z < deadLine)
         {
             Destroy(this.gameObject);
-            Debug.Log("通常攻撃破棄");
         }
     }
 
@@ -37,7 +36,6 @@ public class E_NomalAttackBaseController : MonoBehaviour
         if (other.gameObject.tag == "PlayerTag")
         {
             Destroy(this.gameObject);
-            Debug.Log("Playerに" + name + "を攻撃!!");
         }
     }
 }

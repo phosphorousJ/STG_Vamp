@@ -34,8 +34,8 @@ public class P_R_SkillAttackController : MonoBehaviour
     //R攻撃の衝突処理
     void OnTriggerEnter(Collider other)
     {
-        //通常攻撃（Enemy）の場合
-        if (other.gameObject.tag == "E_NomalAttackTag")
+        //通常攻撃（Enemy）
+        if (other.gameObject.tag == "E_NomalAttackTag" || other.gameObject.tag == "E_BK_NomalAttackTag")
         {
             //衝突位置を取得
             Vector3 hitPos = other.ClosestPointOnBounds(this.transform.position);
@@ -47,13 +47,18 @@ public class P_R_SkillAttackController : MonoBehaviour
 
             //E_NomalAttackを相殺
             Destroy(other.gameObject);
-            Debug.Log("Enemyの攻撃を相殺");
 
             //相殺したE_NomalAttackの数を更新
             eNomalAttackNum++;
         }
 
-        //BackWallの場合
+        //通常攻撃（Enemy_MCの場合）
+        if (other.gameObject.tag == "E_MC_NomalAttackTag")
+        {
+            Destroy(this.gameObject);
+        }
+
+        //BackWall
         if (other.gameObject.tag == "BackWallTag")
         {
             //ダメージ計算
@@ -80,7 +85,7 @@ public class P_R_SkillAttackController : MonoBehaviour
             }
         }
 
-        //Enemyの場合
+        //Enemy
         if (other.gameObject.tag == "EnemyTag")
         {
             //パーティクルをインスタンス生成
