@@ -12,8 +12,9 @@ public class Button_Retry0_0 : MonoBehaviour
     {
         if (!firstPush)
         {
-            Debug.Log("Retry!!");
+            firstPush = true;
 
+            //Enemyの被ダメージ量によって推移するGameSceneを分岐させる
             if (0 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 20000)
             {
                 SceneManager.LoadScene("GameScene0_0");
@@ -29,8 +30,6 @@ public class Button_Retry0_0 : MonoBehaviour
                 SceneManager.LoadScene("GameScene0_0");
                 Debug.Log("通常2");
             }
-
-            firstPush = true;
         }
     }
 }

@@ -12,9 +12,9 @@ public class Button_SubRetry2_1 : MonoBehaviour
     {
         if (!firstPush)
         {
-            SceneManager.LoadScene("GameSubScene2_1");
-
             firstPush = true;
+
+            SceneManager.LoadScene("GameSubScene2_1");
         }
     }
 }

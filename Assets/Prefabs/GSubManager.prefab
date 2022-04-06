@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1765057318879548487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765057318879548481}
+  - component: {fileID: 1765057318879548486}
+  m_Layer: 0
+  m_Name: GSubManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765057318879548481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765057318879548487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1765057318879548486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765057318879548487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 572de0d2e5b2fb74f819dc17d711c192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_PosX: 0
+  Player_PosY: 0
+  ANE_SkillAttackPosX: 0
+  ANE_SkillAttackPosY: 0
+  FLM_SkillAttack0_2PosX: 0
+  FLM_SkillAttack0_2PosY: 0
+  FLM_SkillAttack1_1PosX: 0
+  FLM_SkillAttack1_1PosY: 0
+  TT_SkillAttack0_1PosX: 0
+  TT_SkillAttack0_1PosY: 0
+  TT_SkillAttack0_2PosX: 0
+  TT_SkillAttack0_2PosY: 0
+  TT_SkillAttack0_3PosX: 0
+  TT_SkillAttack0_3PosY: 0
+  BK_SkillAttack0_1PosX: 0
+  BK_SkillAttack0_1PosY: 0
+  BK_SkillAttack0_2PosX: 0
+  BK_SkillAttack0_2PosY: 0
+  BK_SkillAttack1_1PosX: 0
+  BK_SkillAttack1_1PosY: 0
+  BK_SkillAttack1_2PosX: 0
+  BK_SkillAttack1_2PosY: 0
+  BK_SkillAttack1_3PosX: 0
+  BK_SkillAttack1_3PosY: 0
+  SJ_SkillAttack0_1PosX: 0
+  SJ_SkillAttack0_1PosY: 0
+  SJ_SkillAttack0_2PosX: 0
+  SJ_SkillAttack0_2PosY: 0
+  SJ_SkillAttack0_3PosX: 0
+  SJ_SkillAttack0_3PosY: 0
+  SJ_SkillAttack0_4PosX: 0
+  SJ_SkillAttack0_4PosY: 0
+  SJ_SkillAttack1_1PosX: 0
+  SJ_SkillAttack1_1PosY: 0
+  SJ_SkillAttack1_2PosX: 0
+  SJ_SkillAttack1_2PosY: 0
+  SJ_SkillAttack1_3PosX: 0
+  SJ_SkillAttack1_3PosY: 0
+  SJ_SkillAttack2_1_SPosX: 0
+  SJ_SkillAttack2_1_SPosY: 0
+  SJ_SkillAttack2_1_NPosX: 0
+  SJ_SkillAttack2_1_NPosY: 0
+  SJ_SkillAttack2_1_WPosX: 0
+  SJ_SkillAttack2_1_WPosY: 0
+  SJ_SkillAttack2_1_EPosX: 0
+  SJ_SkillAttack2_1_EPosY: 0
+  SJ_SkillAttack2_2PosX: 0
+  SJ_SkillAttack2_2PosY: 0
+  SJ_SkillAttack2_3PosX: 0
+  SJ_SkillAttack2_3PosY: 0
+  SJ_SkillAttack2_5PosX: 0
+  SJ_SkillAttack2_5PosY: 0
+  SJ_SkillAttack2_6PosX: 0
+  SJ_SkillAttack2_6PosY: 0
+  SJ_SkillAttack2_7PosX: 0
+  SJ_SkillAttack2_7PosY: 0
+  SJ_SkillAttack2_8PosX: 0
+  SJ_SkillAttack2_8PosY: 0

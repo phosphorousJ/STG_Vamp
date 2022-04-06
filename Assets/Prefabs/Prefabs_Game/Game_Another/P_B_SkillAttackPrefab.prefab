@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bb6fdefaf9d594ebc0790145b7f1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: "\u9B54\u5F3E"
+  name: "\u9B54\u5F3E\u300C\u8840\u300D"
   speed: 17
   power: 200
   E_B_ParticleSystemPrefab: {fileID: 1476893432215640624, guid: bc851754047e8b8449d1f298acb29816,

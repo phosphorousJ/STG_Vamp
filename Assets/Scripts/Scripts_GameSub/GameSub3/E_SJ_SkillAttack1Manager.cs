@@ -50,8 +50,27 @@ public class E_SJ_SkillAttack1Manager : MonoBehaviour
         //SJの大技1発動を判定
         GManager.instance.SJ_Skill1 = true;
 
-        //コルーチン開始
-        StartCoroutine(SkillAttack1_0());
+        //難易度によって開始するコルーチンを変更
+        if (GManager.instance.easy == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_3());
+        }
+        else if (GManager.instance.nomal == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_2());
+        }
+        else if (GManager.instance.hard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_1());
+        }
+        else if (GManager.instance.veryHard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_0());
+        }
     }
 
 
@@ -141,9 +160,6 @@ public class E_SJ_SkillAttack1Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_SJ_SkillAttack1Reset();
-
 
         StartCoroutine(SkillAttack1_1());
     }
@@ -221,9 +237,6 @@ public class E_SJ_SkillAttack1Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_SJ_SkillAttack1Reset();
-        
 
         StartCoroutine(SkillAttack1_2());
     }
@@ -332,9 +345,6 @@ public class E_SJ_SkillAttack1Manager : MonoBehaviour
 
 
         yield return waitOneS;
-
-        //生成位置をリセット
-        E_SJ_SkillAttack1Reset();
 
 
         StartCoroutine(SkillAttack1_3());
@@ -475,7 +485,7 @@ public class E_SJ_SkillAttack1Manager : MonoBehaviour
         yield return waitHalfS;
 
 
-        SceneManager.LoadScene("TalkScene3_5");
+        FadeManager.Instance.LoadScene("TalkScene3_5", 0.5f);
     }
     #endregion
 
@@ -568,20 +578,6 @@ public class E_SJ_SkillAttack1Manager : MonoBehaviour
     {
         //挟雷（E_SJ_SkillAttack1_4Prefab）を生成
         Instantiate(E_SJ_SkillAttack1_4Prefab, new Vector3(positionX, positionY, -0.05f), Quaternion.Euler(0, 0, angle));
-    }
-    #endregion
-
-
-    #region//生成位置のリセット関数
-    //攻撃の生成位置をリセットする関数
-    void E_SJ_SkillAttack1Reset()
-    {
-        GSubManager.instance.SJ_SkillAttack1_1PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack1_1PosY = 0.0f;
-        GSubManager.instance.SJ_SkillAttack1_2PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack1_2PosY = 0.0f;
-        GSubManager.instance.SJ_SkillAttack1_3PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack1_3PosY = 0.0f;
     }
     #endregion
 }

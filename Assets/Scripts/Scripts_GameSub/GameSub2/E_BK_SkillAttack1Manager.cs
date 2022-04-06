@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class E_BK_SkillAttack1Manager : MonoBehaviour
 {
@@ -41,8 +40,27 @@ public class E_BK_SkillAttack1Manager : MonoBehaviour
         //BKの大技1発動を判定
         GManager.instance.BK_Skill1 = true;
 
-        //コルーチン開始
-        StartCoroutine(SkillAttack1_0());
+        //難易度によって開始するコルーチンを変更
+        if (GManager.instance.easy == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_3());
+        }
+        else if (GManager.instance.nomal == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_2());
+        }
+        else if (GManager.instance.hard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_1());
+        }
+        else if (GManager.instance.veryHard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_0());
+        }
     }
 
 
@@ -78,18 +96,12 @@ public class E_BK_SkillAttack1Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack1Reset();
-
 
         ////水晶E×4
         E_BK_SkillAttacks1_1_X(4.2f, -1.32f, -0.66f, 0.0f, 0.66f, 90);
 
 
         yield return waitOneS;
-
-        //生成位置をリセット
-        E_BK_SkillAttack1Reset();
 
 
         ////スタンプ連打W
@@ -114,18 +126,12 @@ public class E_BK_SkillAttack1Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack1Reset();
-
 
         ////水晶N×4
         E_BK_SkillAttacks1_1_Y(-1.32f, 0.0f, 0.66f, 1.32f, 4.2f, 180);
 
         
         yield return waitOneS;
-
-        //生成位置をリセット
-        E_BK_SkillAttack1Reset();
 
 
         StartCoroutine(SkillAttack1_1());
@@ -245,9 +251,6 @@ public class E_BK_SkillAttack1Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack1Reset();
-        
 
         StartCoroutine(SkillAttack1_2());
     }
@@ -381,9 +384,7 @@ public class E_BK_SkillAttack1Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack1Reset();
-
+        
         StartCoroutine(SkillAttack1_3());
     }
     #endregion
@@ -501,11 +502,8 @@ public class E_BK_SkillAttack1Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack1Reset();
 
-
-        SceneManager.LoadScene("TalkScene2_4");
+        FadeManager.Instance.LoadScene("TalkScene2_4", 0.5f);
     }
     #endregion
 
@@ -595,16 +593,6 @@ public class E_BK_SkillAttack1Manager : MonoBehaviour
     {
         //キック本体（E_BK_SkillAttack1_3Prefab）を生成
         Instantiate(E_BK_SkillAttack1_3Prefab, new Vector3(positionX, positionY, -0.05f), Quaternion.Euler(0, 0, angle));
-    }
-    #endregion
-
-
-    #region//生成位置のリセット関数
-    //攻撃の生成位置をリセットする関数
-    void E_BK_SkillAttack1Reset()
-    {
-        GSubManager.instance.BK_SkillAttack1_1PosX = 0.0f;
-        GSubManager.instance.BK_SkillAttack1_1PosY = 0.0f;
     }
     #endregion
 }

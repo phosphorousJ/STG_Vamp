@@ -12,24 +12,20 @@ public class Button_SubRetry3_0 : MonoBehaviour
     {
         if (!firstPush)
         {
+            firstPush = true;
+
             //大技の発動判定によって推移するGameSubSceneを分岐させる
             if (GManager.instance.SJ_Skill1 == false && GManager.instance.SJ_Skill2 == false)
             {
                 SceneManager.LoadScene("GameSubScene3_0");
-
-                firstPush = true;
             }
             else if (GManager.instance.SJ_Skill2 == false)
             {
                 SceneManager.LoadScene("GameSubScene3_1");
-
-                firstPush = true;
             }
             else
             {
                 SceneManager.LoadScene("GameSubScene3_2");
-
-                firstPush = true;
             }
         }
     }

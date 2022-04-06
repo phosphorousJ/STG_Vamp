@@ -12,6 +12,8 @@ public class Button_Retry3_1 : MonoBehaviour
     {
         if (!firstPush)
         {
+            firstPush = true;
+
             //Enemyの被ダメージ量によって推移するGameSceneを分岐させる
             if (50000 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 55000)
             {
@@ -20,8 +22,6 @@ public class Button_Retry3_1 : MonoBehaviour
 
                 SceneManager.LoadScene("GameScene3_4");
             }
-
-            firstPush = true;
         }
     }
 }

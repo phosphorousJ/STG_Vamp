@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class E_SJ_SkillAttack0Manager : MonoBehaviour
 {
@@ -47,8 +46,27 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
         //SJの大技0発動を判定
         GManager.instance.SJ_Skill0 = true;
 
-        //コルーチン開始
-        StartCoroutine(SkillAttack0_0());
+        //難易度によって開始するコルーチンを変更
+        if (GManager.instance.easy == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_3());
+        }
+        else if (GManager.instance.nomal == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_2());
+        }
+        else if (GManager.instance.hard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_1());
+        }
+        else if (GManager.instance.veryHard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_0());
+        }
     }
 
 
@@ -75,9 +93,6 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
 
             
             yield return new WaitForSeconds(0.3f);
-
-            //生成位置をリセット
-            E_SJ_SkillAttack0Reset();
         }
 
 
@@ -95,9 +110,6 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
 
             yield return new WaitForSeconds(0.3f);
 
-            //生成位置をリセット
-            E_SJ_SkillAttack0Reset();
-
 
             //流チャージW
             posY = attackPos0[Random.Range(0, attackPos0.Length)];
@@ -109,9 +121,6 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
 
             
             yield return new WaitForSeconds(0.3f);
-
-            //生成位置をリセット
-            E_SJ_SkillAttack0Reset();
         }
 
 
@@ -133,8 +142,8 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
 
         ////直流N×2
         //流チャージ
-        E_SJ_SkillAttack0_0(-0.66f, -4.7f, 180);
-        E_SJ_SkillAttack0_0(0.66f, -4.7f, 180);
+        E_SJ_SkillAttack0_0(-0.66f, 4.7f, 180);
+        E_SJ_SkillAttack0_0(0.66f, 4.7f, 180);
 
         //攻撃
         yield return new WaitForSeconds(0.3f);
@@ -144,15 +153,12 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_SJ_SkillAttack0Reset();
-
 
         StartCoroutine(SkillAttack0_1());
     }
     #endregion
 
-    # region//1:網流(N&W)×3、網流(S&E)×2
+    # region//1:交流(N&W)×3、交流(S&E)×2
     IEnumerator SkillAttack0_1()
     {
         var waitOneS = new WaitForSeconds(1.0f);
@@ -161,7 +167,7 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
         yield return waitOneS;
 
 
-        ////網流(N&W)×3
+        ////交流(N&W)×3
         //流チャージN
         E_SJ_SkillAttack0_0(-1.32f, 4.7f, 180);
         E_SJ_SkillAttack0_0(0.0f, 4.7f, 180);
@@ -180,7 +186,7 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
         yield return waitOneS;
 
 
-        ////網流(S&E)×2
+        ////交流(S&E)×2
         //流チャージS
         E_SJ_SkillAttack0_0(-0.66f, -4.7f, 0);
         E_SJ_SkillAttack0_0(0.66f, -4.7f, 0);
@@ -195,9 +201,6 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
 
 
         yield return waitOneS;
-
-        //生成位置をリセット
-        E_SJ_SkillAttack0Reset();
 
 
         StartCoroutine(SkillAttack0_2());
@@ -283,9 +286,6 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_SJ_SkillAttack0Reset();
-
 
         StartCoroutine(SkillAttack0_3());
     }
@@ -363,7 +363,7 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
         yield return new WaitForSeconds(10.0f);
 
 
-        SceneManager.LoadScene("TalkScene3_3");
+        FadeManager.Instance.LoadScene("TalkScene3_3", 0.5f);
     }
     #endregion
 
@@ -532,12 +532,6 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
     //攻撃の生成位置をリセットする関数
     void E_SJ_SkillAttack0Reset()
     {
-        GSubManager.instance.SJ_SkillAttack0_1PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack0_1PosY = 0.0f;
-        GSubManager.instance.SJ_SkillAttack0_2PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack0_2PosY = 0.0f;
-        GSubManager.instance.SJ_SkillAttack0_3PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack0_3PosY = 0.0f;
         GSubManager.instance.SJ_SkillAttack0_4PosX = 0.0f;
         GSubManager.instance.SJ_SkillAttack0_4PosY = 0.0f;
     }

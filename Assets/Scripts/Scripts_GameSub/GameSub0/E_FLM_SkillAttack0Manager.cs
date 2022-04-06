@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class E_FLM_SkillAttack0Manager : MonoBehaviour
 {
@@ -23,8 +22,27 @@ public class E_FLM_SkillAttack0Manager : MonoBehaviour
         //FLMの大技0発動を判定
         GManager.instance.FLM_Skill0 = true;
 
-        //コルーチン開始
-        StartCoroutine(SkillAttack0_0());
+        //難易度によって開始するコルーチンを変更
+        if (GManager.instance.easy == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_3());
+        }
+        else if (GManager.instance.nomal == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_2());
+        }
+        else if (GManager.instance.hard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_1());
+        }
+        else if (GManager.instance.veryHard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_0());
+        }
     }
 
 
@@ -84,9 +102,6 @@ public class E_FLM_SkillAttack0Manager : MonoBehaviour
 
 
         yield return waitOneHalfS;
-
-        //生成位置をリセット
-        E_FLM_SkillAttack0Reset();
         
 
         StartCoroutine(SkillAttack0_1());
@@ -162,9 +177,6 @@ public class E_FLM_SkillAttack0Manager : MonoBehaviour
 
 
         yield return waitOneHalfS;
-
-        //生成位置をリセット
-        E_FLM_SkillAttack0Reset();
 
 
         StartCoroutine(SkillAttack0_2());
@@ -336,7 +348,7 @@ public class E_FLM_SkillAttack0Manager : MonoBehaviour
         E_FLM_SkillAttack0Reset();
 
 
-        SceneManager.LoadScene("GameScene0_0");
+        FadeManager.Instance.LoadScene("GameScene0_0", 0.5f);
     }
     #endregion
 
@@ -397,8 +409,7 @@ public class E_FLM_SkillAttack0Manager : MonoBehaviour
     //攻撃の生成位置をリセットする関数
     void E_FLM_SkillAttack0Reset()
     {
-        GSubManager.instance.FLM_SkillAttack0_1PosX = 0.0f;
-        GSubManager.instance.FLM_SkillAttack0_1PosY = 0.0f;
+        //回転大鎌の斜め移動を防止
         GSubManager.instance.FLM_SkillAttack0_2PosX = 0.0f;
         GSubManager.instance.FLM_SkillAttack0_2PosY = 0.0f;
     }

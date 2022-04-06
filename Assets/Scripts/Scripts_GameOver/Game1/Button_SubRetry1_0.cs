@@ -12,11 +12,9 @@ public class Button_SubRetry1_0 : MonoBehaviour
     {
         if (!firstPush)
         {
-            Debug.Log("Retry!!");
+            firstPush = true;
 
             SceneManager.LoadScene("GameSubScene1_0");
-
-            firstPush = true;
         }
     }
 }

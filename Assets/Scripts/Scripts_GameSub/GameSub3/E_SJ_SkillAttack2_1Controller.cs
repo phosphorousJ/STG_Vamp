@@ -15,7 +15,7 @@ public class E_SJ_SkillAttack2_1Controller : MonoBehaviour
         //電力を移動させる
         transform.Translate(0, moveSpeed * Time.deltaTime, 0);
 
-        //電力の生成位置によって破棄する位置を変える
+        //四貫の生成位置によって破棄する位置を変える
         if (GSubManager.instance.SJ_SkillAttack2_1_SPosY < 0)//S
         {
             Invoke("ObjectDestroy", 0.3f);

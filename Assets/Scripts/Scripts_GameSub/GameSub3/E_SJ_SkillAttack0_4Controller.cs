@@ -7,6 +7,7 @@ public class E_SJ_SkillAttack0_4Controller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //回流の処理
         Invoke("ObjectRotate", 1.5f);
 
         Invoke("ObjectDestroy", 8.0f);

@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class E_FLM_SkillAttack1Manager : MonoBehaviour
 {
     #region//インスペクター設定
-    //E_FLM_SkillAttack1_1Prefabを入れる（移動大鎌）
+    //E_FLM_SkillAttack1_1Prefabを入れる（翔羽）
     public GameObject E_FLM_SkillAttack1_1Prefab;
 
-    //E_FLM_SkillAttack1_2Prefabを入れる（回転大鎌）
+    //E_FLM_SkillAttack1_2Prefabを入れる（積羽）
     public GameObject E_FLM_SkillAttack1_2Prefab;
     #endregion
 
@@ -35,8 +34,27 @@ public class E_FLM_SkillAttack1Manager : MonoBehaviour
         //FLMの大技1発動を判定
         GManager.instance.FLM_Skill1 = true;
 
-        //コルーチン開始
-        StartCoroutine(SkillAttack1_0());
+        //難易度によって開始するコルーチンを変更
+        if (GManager.instance.easy == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_3());
+        }
+        else if (GManager.instance.nomal == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_2());
+        }
+        else if (GManager.instance.hard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_1());
+        }
+        else if (GManager.instance.veryHard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_0());
+        }
     }
 
 
@@ -45,7 +63,6 @@ public class E_FLM_SkillAttack1Manager : MonoBehaviour
     {
         var waitHalfS = new WaitForSeconds(0.5f);
         var waitOneS = new WaitForSeconds(1.0f);
-        var waitOneHalfS = new WaitForSeconds(1.5f);
 
 
         yield return new WaitForSeconds(2.0f);
@@ -69,9 +86,6 @@ public class E_FLM_SkillAttack1Manager : MonoBehaviour
 
 
         yield return waitOneS;
-
-        //生成位置をリセット
-        E_FLM_SkillAttack1Reset();
 
 
         StartCoroutine(SkillAttack1_1());
@@ -186,9 +200,6 @@ public class E_FLM_SkillAttack1Manager : MonoBehaviour
 
 
         yield return waitOneHalfS;
-
-        //生成位置をリセット
-        E_FLM_SkillAttack1Reset();
 
 
         StartCoroutine(SkillAttack1_3());
@@ -323,11 +334,8 @@ public class E_FLM_SkillAttack1Manager : MonoBehaviour
 
         yield return waitOneHalfS;
 
-        //生成位置をリセット
-        E_FLM_SkillAttack1Reset();
 
-
-        SceneManager.LoadScene("TalkScene0_4");
+        FadeManager.Instance.LoadScene("TalkScene0_4", 0.5f);
     }
     #endregion
 
@@ -359,16 +367,6 @@ public class E_FLM_SkillAttack1Manager : MonoBehaviour
     {
         //回転大鎌（E_FLM_SkillAttack1_2Prefab）を生成
         Instantiate(E_FLM_SkillAttack1_2Prefab, new Vector3(positionX, positionY, -0.05f), Quaternion.Euler(0, 0, angle));
-    }
-    #endregion
-
-
-    #region//生成位置のリセット関数
-    //攻撃の生成位置をリセットする関数
-    void E_FLM_SkillAttack1Reset()
-    {
-        GSubManager.instance.FLM_SkillAttack1_1PosX = 0.0f;
-        GSubManager.instance.FLM_SkillAttack1_1PosY = 0.0f;
     }
     #endregion
 }

@@ -20,7 +20,6 @@ public class E_TT_SkillAttack0_2Controller : MonoBehaviour
         {
             if (0 < transform.position.y)
             {
-                Debug.Log("S:" + transform.position);
                 Destroy(this.gameObject);
             }
         }
@@ -29,7 +28,6 @@ public class E_TT_SkillAttack0_2Controller : MonoBehaviour
         {
             if (0 < transform.position.x)
             {
-                Debug.Log("W:" + transform.position);
                 Destroy(this.gameObject);
             }
         }
@@ -38,7 +36,6 @@ public class E_TT_SkillAttack0_2Controller : MonoBehaviour
         {
             if (transform.position.y < 0)
             {
-                Debug.Log("N:" + transform.position);
                 Destroy(this.gameObject);
             }
         }
@@ -47,7 +44,6 @@ public class E_TT_SkillAttack0_2Controller : MonoBehaviour
         {
             if (transform.position.x < 0)
             {
-                Debug.Log("E:" + transform.position);
                 Destroy(this.gameObject);
             }
         }

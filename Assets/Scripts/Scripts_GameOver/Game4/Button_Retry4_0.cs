@@ -12,9 +12,9 @@ public class Button_Retry4_0 : MonoBehaviour
     {
         if (!firstPush)
         {
-            SceneManager.LoadScene("GameScene4_0");
-
             firstPush = true;
+
+            SceneManager.LoadScene("GameScene4_0");
         }
     }
 }

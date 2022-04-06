@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class E_TT_SkillAttack0Manager : MonoBehaviour
 {
@@ -32,8 +31,27 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
         //TTの大技0発動を判定
         GManager.instance.TT_Skill0 = true;
 
-        //コルーチン開始
-        StartCoroutine(SkillAttack0_0());
+        //難易度によって開始するコルーチンを変更
+        if (GManager.instance.easy == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_3());
+        }
+        else if (GManager.instance.nomal == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_2());
+        }
+        else if (GManager.instance.hard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_1());
+        }
+        else if (GManager.instance.veryHard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_0());
+        }
     }
 
 
@@ -60,9 +78,6 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
 
 
         yield return waitOneS;
-
-        //生成位置をリセット
-        E_TT_SkillAttack0Reset();
 
 
         //刺突N
@@ -124,9 +139,6 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
 
 
         yield return waitOneS;
-
-        //生成位置をリセット
-        E_TT_SkillAttack0Reset();
 
 
         //刺突E
@@ -251,9 +263,6 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
 
         yield return waitOneS;
 
-        //生成位置をリセット
-        E_TT_SkillAttack0Reset();
-
 
         //刺突E
         player = Player.transform.position;
@@ -278,9 +287,6 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
 
 
         yield return waitOneS;
-
-        //生成位置をリセット
-        E_TT_SkillAttack0Reset();
 
 
         //参命剣S
@@ -321,7 +327,7 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
         //生成位置をリセット
         E_TT_SkillAttack0Reset();
 
-        SceneManager.LoadScene("GameScene1_0");
+        FadeManager.Instance.LoadScene("GameScene1_0", 0.5f);
     }
     #endregion
 
@@ -395,8 +401,7 @@ public class E_TT_SkillAttack0Manager : MonoBehaviour
     //攻撃の生成位置をリセットする関数
     void E_TT_SkillAttack0Reset()
     {
-        GSubManager.instance.TT_SkillAttack0_1PosX = 0.0f;
-        GSubManager.instance.TT_SkillAttack0_1PosY = 0.0f;
+        //刺突、刺突斬りが途中で破棄されるのを防止
         GSubManager.instance.TT_SkillAttack0_2PosX = 0.0f;
         GSubManager.instance.TT_SkillAttack0_2PosY = 0.0f;
         GSubManager.instance.TT_SkillAttack0_3PosX = 0.0f;

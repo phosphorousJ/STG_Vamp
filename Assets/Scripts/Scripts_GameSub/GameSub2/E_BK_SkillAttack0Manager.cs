@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class E_BK_SkillAttack0Manager : MonoBehaviour
 {
@@ -32,8 +31,27 @@ public class E_BK_SkillAttack0Manager : MonoBehaviour
         //BKの大技0発動を判定
         GManager.instance.BK_Skill0 = true;
 
-        //コルーチン開始
-        StartCoroutine(SkillAttack0_0());
+        //難易度によって開始するコルーチンを変更
+        if (GManager.instance.easy == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_3());
+        }
+        else if (GManager.instance.nomal == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_2());
+        }
+        else if (GManager.instance.hard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_1());
+        }
+        else if (GManager.instance.veryHard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack0_0());
+        }
     }
 
 
@@ -128,9 +146,6 @@ public class E_BK_SkillAttack0Manager : MonoBehaviour
 
         yield return waitOneHalfS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack0Reset();
-
 
         ////パンチEE
         E_BK_SkillAttack0_1_X(3.55f, 1.0f, 90);
@@ -139,19 +154,13 @@ public class E_BK_SkillAttack0Manager : MonoBehaviour
 
         yield return waitOneHalfS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack0Reset();
-
-
+        
         ////パンチWW
         E_BK_SkillAttack0_1_X(-3.55f, 1.0f, -90);
         E_BK_SkillAttack0_1_X(-3.55f, -1.0f, -90);
 
         
         yield return waitOneHalfS;
-
-        //生成位置をリセット
-        E_BK_SkillAttack0Reset();
 
 
         ////パンチSE
@@ -161,9 +170,6 @@ public class E_BK_SkillAttack0Manager : MonoBehaviour
 
         yield return waitOneHalfS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack0Reset();
-
 
         ////パンチNW
         E_BK_SkillAttack0_1_Y(1.0f, 3.55f, 180);
@@ -172,9 +178,6 @@ public class E_BK_SkillAttack0Manager : MonoBehaviour
         
         yield return waitOneHalfS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack0Reset();
-
 
         ////パンチNE
         E_BK_SkillAttack0_1_Y(-1.0f, 3.55f, 180);
@@ -182,9 +185,6 @@ public class E_BK_SkillAttack0Manager : MonoBehaviour
 
 
         yield return waitOneHalfS;
-
-        //生成位置をリセット
-        E_BK_SkillAttack0Reset();
 
 
         ////パンチSW
@@ -378,9 +378,6 @@ public class E_BK_SkillAttack0Manager : MonoBehaviour
         
         yield return waitOneHalfS;
 
-        //生成位置をリセット
-        E_BK_SkillAttack0Reset();
-
 
         ////スタンプ連打N
         for (int i = 0; i < 10; i++)
@@ -409,7 +406,7 @@ public class E_BK_SkillAttack0Manager : MonoBehaviour
         E_BK_SkillAttack0Reset();
 
 
-        SceneManager.LoadScene("GameScene2_0");
+        FadeManager.Instance.LoadScene("GameScene2_0", 0.5f);
     }
     #endregion
 
@@ -461,6 +458,7 @@ public class E_BK_SkillAttack0Manager : MonoBehaviour
     //攻撃の生成位置をリセットする関数
     void E_BK_SkillAttack0Reset()
     {
+        //パンチが途中で破棄されるのを防止
         GSubManager.instance.BK_SkillAttack0_1PosX = 0.0f;
         GSubManager.instance.BK_SkillAttack0_1PosY = 0.0f;
     }

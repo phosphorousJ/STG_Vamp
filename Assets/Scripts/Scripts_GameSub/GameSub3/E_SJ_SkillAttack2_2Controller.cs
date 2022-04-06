@@ -20,7 +20,7 @@ public class E_SJ_SkillAttack2_2Controller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //電力の生成位置によって破棄する位置を変える
+        //回撃の生成位置によって破棄する位置を変える
         if (GSubManager.instance.SJ_SkillAttack2_2PosY < 0)//S
         {
             if (transform.position.y < 0)
@@ -31,7 +31,6 @@ public class E_SJ_SkillAttack2_2Controller : MonoBehaviour
             else
             {
                 move = false;
-                Debug.Log("停止");
 
                 Invoke("ObjectRotate", 1.0f);
 
@@ -62,8 +61,6 @@ public class E_SJ_SkillAttack2_2Controller : MonoBehaviour
     {
         //電力を移動させる
         transform.Translate(0, moveSpeed * Time.deltaTime, 0);
-
-        Debug.Log("移動");
     }
 
     void ObjectRotate()

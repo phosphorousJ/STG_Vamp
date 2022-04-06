@@ -6,13 +6,58 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Scenes_Another/TitleScene.unity
+    path: Assets/Scenes/Scenes_Another/Title/TitleScene.unity
     guid: 2068ef0f912092345aa76e34c19d7d9a
   - enabled: 1
-    path: Assets/Scenes/Scenes_Another/MenuScene.unity
+    path: Assets/Scenes/Scenes_Another/HowToPlay/HowToPlayScene.unity
+    guid: 083be315c0e64464da7a65f97dc37337
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/AttackTurn/AttackTurnScene.unity
+    guid: bac24383744124f40a5e82bd5973d53b
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Game/GameT/GameSceneT.unity
+    guid: d38216415e33756418e1e748138e8ae4
+  - enabled: 1
+    path: Assets/Scenes/Scenes_GameOver/GameT/GameOverSceneT.unity
+    guid: 252ee82424c62a44092db25823d5e0d8
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/AvoidanceTurn/AvoidanceTurnScene.unity
+    guid: f95dafa968ac3e94fa1744e31f1f2da7
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Game/GameT/GameSubSceneT.unity
+    guid: a1fb3a2d2fa60af4db93b1308dac3129
+  - enabled: 1
+    path: Assets/Scenes/Scenes_GameOver/GameT/GameOverSubSceneT.unity
+    guid: 1f05f0e92414cf446821736867ec9409
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/Character/CharacterSelectScene.unity
+    guid: 344ac0f29b8999e4fb41e4d3d00e5dc3
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/Character/CharacterPScene.unity
+    guid: 26b40cb5bb444a249ae80ec8bae0b19b
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/Character/Character0Scene.unity
+    guid: a356b6fe21a4fa2458078bae12da517b
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/Character/Character1Scene.unity
+    guid: 7387b2bc53df8534da27650aa74c31bf
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/Character/Character2Scene.unity
+    guid: 72469f1f096d64c4481d7545ac778ecb
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/Character/Character3Scene.unity
+    guid: cf7c6c13f632b4243bbccbc462f93534
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/Character/Character4Scene.unity
+    guid: 60038d9ee509c1b45aef832c4946e452
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/LevelSelect/LevelSelectScene.unity
+    guid: a0ddbb5f81dc586478d8d97daa8cc64c
+  - enabled: 1
+    path: Assets/Scenes/Scenes_Another/Menu/MenuScene.unity
     guid: 27e31e2344ef13242bf50b9197c606fd
   - enabled: 1
-    path: Assets/Scenes/Scenes_Another/Story0Scene.unity
+    path: Assets/Scenes/Scenes_Another/StorySelect/Story0Scene.unity
     guid: c3b8687e21ad5b742ad7f1a8181c09ec
   - enabled: 1
     path: Assets/Scenes/Scenes_Story/Game0/TalkScene0_0.unity
@@ -75,7 +120,7 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Scenes_Another/Story1Scene.unity
+    path: Assets/Scenes/Scenes_Another/StorySelect/Story1Scene.unity
     guid: 468f9228399b45840a744d9044acc74f
   - enabled: 1
     path: Assets/Scenes/Scenes_Story/Game1/TalkScene1_0.unity
@@ -132,7 +177,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes_Story/Game1/TalkScene1_8.unity
     guid: 177d09ab64e49394189994e3b43bc19a
   - enabled: 1
-    path: Assets/Scenes/Scenes_Another/Story2Scene.unity
+    path: Assets/Scenes/Scenes_Another/StorySelect/Story2Scene.unity
     guid: 501792efe4c73c745a3d9bb0c4e7d8d0
   - enabled: 1
     path: Assets/Scenes/Scenes_Story/Game2/TalkScene2_0.unity
@@ -186,7 +231,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes_Story/Game2/TalkScene2_6.unity
     guid: 54c1dce7c6e1ef8438f965ec915ba20a
   - enabled: 1
-    path: Assets/Scenes/Scenes_Another/Story3Scene.unity
+    path: Assets/Scenes/Scenes_Another/StorySelect/Story3Scene.unity
     guid: e52bdeda981dcab469675f70ffbd111c
   - enabled: 1
     path: Assets/Scenes/Scenes_Story/Game3/TalkScene3_0.unity
@@ -273,7 +318,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes_Story/Game3/TalkScene3_11.unity
     guid: 096457dc40e44d8478a2e7334391cb4e
   - enabled: 1
-    path: Assets/Scenes/Scenes_Another/Story4_0Scene.unity
+    path: Assets/Scenes/Scenes_Another/StorySelect/Story4_0Scene.unity
     guid: 1d05fd902b8d969448e50ba5f3595532
   - enabled: 1
     path: Assets/Scenes/Scenes_Story/Game4/TalkScene4_0.unity
@@ -309,7 +354,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes_Story/Game4/TalkScene4_6.unity
     guid: a9029a49c3574e04f8e2d3a17f9b848b
   - enabled: 1
-    path: Assets/Scenes/Scenes_Another/Story4_1Scene.unity
+    path: Assets/Scenes/Scenes_Another/StorySelect/Story4_1Scene.unity
     guid: 5ab7e68f6dddeee45a21dcdb7b73ef07
   - enabled: 1
     path: Assets/Scenes/Scenes_Story/Game4/TalkScene4_7.unity

@@ -15,21 +15,21 @@ public class E_SJ_SkillAttack2_6Controller : MonoBehaviour
         //電力を移動させる
         transform.Translate(0, moveSpeed * Time.deltaTime, 0);
 
-        //電力の生成位置によって破棄する位置を変える
+        //鉛直万鈞の生成位置によって破棄する位置を変える
         if (GSubManager.instance.SJ_SkillAttack2_6PosY < 0)//S
         {
-            Invoke("ObjectDestroy", 0.25f);
+            if (7.5f < transform.position.y)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
         if (0 < GSubManager.instance.SJ_SkillAttack2_6PosY)//N
         {
-            Invoke("ObjectDestroy", 0.25f);
+            if (transform.position.y < -7.5f)
+            {
+                Destroy(this.gameObject);
+            }
         }
-    }
-
-
-    void ObjectDestroy()
-    {
-        Destroy(this.gameObject);
     }
 }

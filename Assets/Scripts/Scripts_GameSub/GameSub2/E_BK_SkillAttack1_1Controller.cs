@@ -12,10 +12,10 @@ public class E_BK_SkillAttack1_1Controller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //腕を移動させる
+        //水晶を移動させる
         transform.Translate(0, moveSpeed * Time.deltaTime, 0);
 
-        //腕の生成位置によって破棄する位置を変える
+        //水晶の生成位置によって破棄する位置を変える
         if (GSubManager.instance.BK_SkillAttack1_1PosY < 0)//S
         {
             if (4.2f < transform.position.y)

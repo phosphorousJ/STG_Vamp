@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 151247282130495107}
   - component: {fileID: 151247282130495106}
   - component: {fileID: 151247282130495109}
-  - component: {fileID: 3995394572775728097}
+  - component: {fileID: 6065783877650502815}
   m_Layer: 0
   m_Name: E_G_MPBulletPrefab
   m_TagString: E_G_MPBulletTag
@@ -112,7 +112,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3995394572775728097
+--- !u!114 &6065783877650502815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 151247282130495108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f771b28be1a23e47a91959d6b979526, type: 3}
+  m_Script: {fileID: 11500000, guid: e8cd9668065e81f47b9c8ec4ba4ea491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: "\u7DD1\u5F3E"

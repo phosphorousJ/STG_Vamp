@@ -21,7 +21,7 @@ public class E_SJ_SkillAttack1_2Controller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //電圧の生成位置によって破棄する位置を変える
+        //雷壁の生成位置によって破棄する位置を変える
         if (GSubManager.instance.SJ_SkillAttack1_2PosY < 0)//S
         {
             if (transform.position.y < -1.9f)
@@ -32,8 +32,7 @@ public class E_SJ_SkillAttack1_2Controller : MonoBehaviour
             else
             {
                 move = false;
-                Debug.Log("停止");
-
+                
                 Invoke("ObjectDestroy", 0.7f);
             }
         }
@@ -48,8 +47,7 @@ public class E_SJ_SkillAttack1_2Controller : MonoBehaviour
             else
             {
                 move = false;
-                Debug.Log("停止");
-
+                
                 Invoke("ObjectDestroy", 0.7f);
             }
         }
@@ -64,8 +62,7 @@ public class E_SJ_SkillAttack1_2Controller : MonoBehaviour
             else
             {
                 move = false;
-                Debug.Log("停止");
-
+                
                 Invoke("ObjectDestroy", 0.7f);
             }
         }
@@ -80,8 +77,7 @@ public class E_SJ_SkillAttack1_2Controller : MonoBehaviour
             else
             {
                 move = false;
-                Debug.Log("停止");
-
+                
                 Invoke("ObjectDestroy", 0.7f);
             }
         }
@@ -92,8 +88,6 @@ public class E_SJ_SkillAttack1_2Controller : MonoBehaviour
     {
         //電圧を移動させる
         transform.Translate(0, moveSpeed * Time.deltaTime, 0);
-
-        Debug.Log("移動");
     }
 
 

@@ -16,13 +16,16 @@ public class E_SJ_SkillAttack2_7Controller : MonoBehaviour
         //電力を回転させる
         transform.Rotate(0, 0, rotSpeed);
 
-        //電力の生成位置によって破棄する位置を変える
+        //回転万鈞の生成位置によって破棄する位置を変える
         if (GSubManager.instance.SJ_SkillAttack2_7PosX < 0)//W
         {
             //電力を回転移動させる
             transform.Translate(moveSpeed * Time.deltaTime, 0, 0, Space.World);
 
-            Invoke("ObjectDestroy", 0.4f);
+            if (7.5f < transform.position.x)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
         if (0 < GSubManager.instance.SJ_SkillAttack2_7PosX)//E
@@ -30,13 +33,10 @@ public class E_SJ_SkillAttack2_7Controller : MonoBehaviour
             //電力を回転移動させる
             transform.Translate(-moveSpeed * Time.deltaTime, 0, 0, Space.World);
 
-            Invoke("ObjectDestroy", 0.4f);
+            if (transform.position.x < -7.5f)
+            {
+                Destroy(this.gameObject);
+            }
         }
-    }
-
-
-    void ObjectDestroy()
-    {
-        Destroy(this.gameObject);
     }
 }

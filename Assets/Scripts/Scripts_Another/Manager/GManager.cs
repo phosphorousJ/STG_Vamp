@@ -8,19 +8,25 @@ public class GManager : MonoBehaviour
     public static GManager instance = null;
 
     //Enemyの被ダメージ
-    public int damage0;
+    public int damage0 { get; set; }
 
     //Enemyの被ダメージ（総被ダメージ計算用）
-    public int damage1;
+    public int damage1 { get; set; }
 
     //Enemyの総被ダメージ
-    public float sumDamage;
+    public float sumDamage { get; set; }
 
     //Enemyの被ダメ軽減割合
-    public float decreaseDamageRate0;
+    public float decreaseDamageRate0 { get; set; }
 
     //playerの被弾回数
-    public int eAttackCount;
+    public int eAttackCount { get; set; }
+
+    //難易度が選択されたのか判定
+    public bool easy = false;
+    public bool nomal = false;
+    public bool hard = false;
+    public bool veryHard = false;
 
     //Enemyが大技を発動したのか判定
     public bool FLM_Skill0 = false;

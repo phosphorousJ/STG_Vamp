@@ -184,7 +184,6 @@ public class PlayerController : MonoBehaviour
             else if (current_bMPBulletNull == 0)
             {
                 bAttack = true;
-                Debug.Log("青弾の弾数がないため、B攻撃できません。");
             }
         }
 
@@ -207,7 +206,6 @@ public class PlayerController : MonoBehaviour
             else if (current_gMPBulletNull == 0)
             {
                 gAttack = true;
-                Debug.Log("緑弾の弾数がないため、G攻撃できません。");
             }
         }
 
@@ -230,7 +228,6 @@ public class PlayerController : MonoBehaviour
             else if (current_rMPBulletNull == 0)
             {
                 rAttack = true;
-                Debug.Log("赤弾の弾数がないため、R攻撃できません。");
             }
         }
     }
@@ -350,7 +347,6 @@ public class PlayerController : MonoBehaviour
             if (b < current_bMPBulletNull)
             {
                 bMPImages[b].SetActive(true);
-                Debug.Log("現在の青弾の弾数:" + current_bMPBulletNull);
             }
             else
             {
@@ -367,7 +363,6 @@ public class PlayerController : MonoBehaviour
         current_bMPBulletNull -= decrease_bMPBulletNull;
 
         bMPImages[current_bMPBulletNull].SetActive(false);
-        Debug.Log("現在の青弾の弾数:" + current_bMPBulletNull);   
     }
     #endregion
 
@@ -381,7 +376,6 @@ public class PlayerController : MonoBehaviour
             if (g < current_gMPBulletNull)
             {
                 gMPImages[g].SetActive(true);
-                Debug.Log("現在の緑弾の弾数:" + current_gMPBulletNull);
             }
             else
             {
@@ -398,7 +392,6 @@ public class PlayerController : MonoBehaviour
         current_gMPBulletNull -= decrease_gMPBulletNull;
 
         gMPImages[current_gMPBulletNull].SetActive(false);
-        Debug.Log("現在の緑弾の弾数:" + current_gMPBulletNull);
     }
     #endregion
 
@@ -412,7 +405,6 @@ public class PlayerController : MonoBehaviour
             if (r < current_rMPBulletNull)
             {
                 rMPImages[r].SetActive(true);
-                Debug.Log("現在の赤弾の弾数:" + current_rMPBulletNull);
             }
             else
             {
@@ -429,7 +421,6 @@ public class PlayerController : MonoBehaviour
         current_rMPBulletNull -= decrease_rMPBulletNull;
 
         rMPImages[current_rMPBulletNull].SetActive(false);
-        Debug.Log("現在の赤弾の弾数:" + current_rMPBulletNull);
     }
     #endregion
 }

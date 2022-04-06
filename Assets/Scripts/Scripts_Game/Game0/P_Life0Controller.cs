@@ -25,7 +25,6 @@ public class P_Life0Controller : P_LifeControllerBase
 
             //被弾回数をリセット
             GManager.instance.eAttackCount = 0;
-            Debug.Log("残機が0です。");
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class E_SJ_SkillAttack2Manager : MonoBehaviour
 {
     #region//インスペクター設定
@@ -67,8 +65,27 @@ public class E_SJ_SkillAttack2Manager : MonoBehaviour
         //SJの大技2発動を判定
         GManager.instance.SJ_Skill2 = true;
 
-        //コルーチン開始
-        StartCoroutine(SkillAttack2_0());
+        //難易度によって開始するコルーチンを変更
+        if (GManager.instance.easy == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack2_3());
+        }
+        else if (GManager.instance.nomal == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack2_2());
+        }
+        else if (GManager.instance.hard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack2_1());
+        }
+        else if (GManager.instance.veryHard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack2_0());
+        }
     }
 
 
@@ -260,9 +277,6 @@ public class E_SJ_SkillAttack2Manager : MonoBehaviour
 
 
             yield return new WaitForSeconds(0.3f);
-
-            //生成位置をリセット
-            E_SJ_SkillAttack2Reset();
         }
 
         yield return new WaitForSeconds(0.3f);
@@ -279,9 +293,6 @@ public class E_SJ_SkillAttack2Manager : MonoBehaviour
 
 
             yield return new WaitForSeconds(0.3f);
-
-            //生成位置をリセット
-            E_SJ_SkillAttack2Reset();
             
 
             //流チャージ
@@ -294,9 +305,6 @@ public class E_SJ_SkillAttack2Manager : MonoBehaviour
 
 
             yield return new WaitForSeconds(0.3f);
-
-            //生成位置をリセット
-            E_SJ_SkillAttack2Reset();
         }
 
 
@@ -325,9 +333,6 @@ public class E_SJ_SkillAttack2Manager : MonoBehaviour
 
 
             yield return new WaitForSeconds(0.3f);
-
-            //生成位置をリセット
-            E_SJ_SkillAttack2Reset();
         }
 
         //流チャージS×2
@@ -413,8 +418,6 @@ public class E_SJ_SkillAttack2Manager : MonoBehaviour
 
 
             yield return new WaitForSeconds(0.3f);
-            //生成位置をリセット
-            E_SJ_SkillAttack2Reset();
         }
 
         yield return new WaitForSeconds(0.3f);
@@ -589,11 +592,8 @@ public class E_SJ_SkillAttack2Manager : MonoBehaviour
 
         yield return waitHalfS;
 
-        //生成位置をリセット
-        E_SJ_SkillAttack2Reset();
 
-
-        SceneManager.LoadScene("TalkScene3_7");
+        FadeManager.Instance.LoadScene("TalkScene3_7", 0.5f);
     }
     #endregion
 
@@ -786,20 +786,13 @@ public class E_SJ_SkillAttack2Manager : MonoBehaviour
     //攻撃の生成位置をリセットする関数
     void E_SJ_SkillAttack2Reset()
     {
+        //四貫・直流万鈞が途中で破棄される、回転万鈞が斜め移動するのを防止
         GSubManager.instance.SJ_SkillAttack2_1_SPosX = 0.0f;
         GSubManager.instance.SJ_SkillAttack2_1_NPosX = 0.0f;
         GSubManager.instance.SJ_SkillAttack2_1_WPosY = 0.0f;
         GSubManager.instance.SJ_SkillAttack2_1_EPosY = 0.0f;
-        GSubManager.instance.SJ_SkillAttack2_2PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack2_2PosY = 0.0f;
-        GSubManager.instance.SJ_SkillAttack2_3PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack2_3PosY = 0.0f;
-        GSubManager.instance.SJ_SkillAttack2_5PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack2_5PosY = 0.0f;
         GSubManager.instance.SJ_SkillAttack2_6PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack2_7PosY = 0.0f;
-        GSubManager.instance.SJ_SkillAttack2_8PosX = 0.0f;
-        GSubManager.instance.SJ_SkillAttack2_8PosY = 0.0f;
+        GSubManager.instance.SJ_SkillAttack2_7PosY = 0.0f; 
     }
     #endregion
 }

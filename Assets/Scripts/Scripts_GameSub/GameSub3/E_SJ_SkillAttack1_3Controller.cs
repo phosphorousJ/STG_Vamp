@@ -21,7 +21,7 @@ public class E_SJ_SkillAttack1_3Controller : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //電圧の生成位置によって破棄する位置を変える
+        //迫電の生成位置によって破棄する位置を変える
         //x軸移動
         if (GSubManager.instance.SJ_SkillAttack1_3PosY == 0)
         {
@@ -35,8 +35,7 @@ public class E_SJ_SkillAttack1_3Controller : MonoBehaviour
                 else
                 {
                     move = false;
-                    Debug.Log("停止");
-
+                    
                     Invoke("ObjectDestroy", 1.0f);
                 }
             }
@@ -74,8 +73,7 @@ public class E_SJ_SkillAttack1_3Controller : MonoBehaviour
                 else
                 {
                     move = false;
-                    Debug.Log("停止");
-
+                    
                     Invoke("ObjectDestroy", 1.0f);
                 }
             }
@@ -105,8 +103,6 @@ public class E_SJ_SkillAttack1_3Controller : MonoBehaviour
     void ObjectMove_R()
     {
         transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
-
-        Debug.Log("移動");
     }
 
 
@@ -114,8 +110,6 @@ public class E_SJ_SkillAttack1_3Controller : MonoBehaviour
     void ObjectMove_L()
     {
         transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
-
-        Debug.Log("移動");
     }
 
 

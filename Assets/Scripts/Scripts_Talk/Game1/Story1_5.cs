@@ -45,6 +45,12 @@ public class Story1_5 : StoryBase
 
             //被弾回数をリセット
             GManager.instance.eAttackCount = 0;
+            GSubManager.instance.eAttackSub0Count = 0;
+            GSubManager.instance.eAttackSub1Count = 1;
+
+            //大技、己心の発動判定をリセット
+            GManager.instance.TT_Skill0 = false;
+            GManager.instance.TT_Skill0 = false;
 
             FadeManager.Instance.LoadScene("Story1Scene", 2.0f);
         }

@@ -27,6 +27,7 @@ TagManager:
   - E_SJ_SkillAttack2Tag
   - E_BK_NomalAttackTag
   - E_MC_NomalAttackTag
+  - E_ANE_SkillAttackTag
   layers:
   - Default
   - TransparentFX

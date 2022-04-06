@@ -18,21 +18,22 @@ public class P_LifeControllerBase : MonoBehaviour
     }
 
 
-    //残機のストックを更新（減少）する関数
+    //Gameの残機ストックを更新（減少）する関数
     public virtual void decreaseLifeImages()
     {
         for (int i = 0; i < lifeImages.Length; i++)
         {
             if (GManager.instance.eAttackCount <= i)
             {
+                //残機のストックを表示
                 lifeImages[i].SetActive(true);
             }
             else
             {
+                //残機のストックを非表示にする
                 lifeImages[i].SetActive(false);
             }
         }
-
     }
 
 

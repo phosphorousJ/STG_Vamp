@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class E_TT_SkillAttack1Manager : MonoBehaviour
 {
@@ -29,8 +28,27 @@ public class E_TT_SkillAttack1Manager : MonoBehaviour
         //TTの大技1発動を判定
         GManager.instance.TT_Skill1 = true;
 
-        //コルーチン開始
-        StartCoroutine(SkillAttack1_0());
+        //難易度によって開始するコルーチンを変更
+        if (GManager.instance.easy == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_3());
+        }
+        else if (GManager.instance.nomal == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_2());
+        }
+        else if (GManager.instance.hard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_1());
+        }
+        else if (GManager.instance.veryHard == true)
+        {
+            //コルーチン開始
+            StartCoroutine(SkillAttack1_0());
+        }
     }
 
 
@@ -321,7 +339,7 @@ public class E_TT_SkillAttack1Manager : MonoBehaviour
         //生成位置をリセット
         E_TT_SkillAttack1Reset();
 
-        SceneManager.LoadScene("TalkScene1_4");
+        FadeManager.Instance.LoadScene("TalkScene1_4", 0.5f);
     }
     #endregion
 
@@ -374,6 +392,7 @@ public class E_TT_SkillAttack1Manager : MonoBehaviour
     //攻撃の生成位置をリセットする関数
     void E_TT_SkillAttack1Reset()
     {
+        //刺突、刺突斬りが途中で破棄されるのを防止
         GSubManager.instance.TT_SkillAttack0_2PosX = 0.0f;
         GSubManager.instance.TT_SkillAttack0_2PosY = 0.0f;
         GSubManager.instance.TT_SkillAttack0_3PosX = 0.0f;
