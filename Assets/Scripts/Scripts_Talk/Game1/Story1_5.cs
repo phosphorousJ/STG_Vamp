@@ -50,7 +50,7 @@ public class Story1_5 : StoryBase
 
             //大技、己心の発動判定をリセット
             GManager.instance.TT_Skill0 = false;
-            GManager.instance.TT_Skill0 = false;
+            GManager.instance.TT_Skill1 = false;
 
             FadeManager.Instance.LoadScene("Story1Scene", 2.0f);
         }

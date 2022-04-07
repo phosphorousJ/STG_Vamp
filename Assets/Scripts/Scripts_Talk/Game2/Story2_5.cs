@@ -37,7 +37,7 @@ public class Story2_5 : StoryBase
 
             //大技、己心の発動判定をリセット
             GManager.instance.BK_Skill0 = false;
-            GManager.instance.BK_Skill0 = false;
+            GManager.instance.BK_Skill1 = false;
 
             FadeManager.Instance.LoadScene("Story2Scene", 2.0f);
         }

@@ -26,9 +26,9 @@ public class Button_Finish : MonoBehaviour
             GManager.instance.FLM_Skill0 = false;
             GManager.instance.FLM_Skill1 = false;
             GManager.instance.TT_Skill0 = false;
-            GManager.instance.TT_Skill0 = false;
+            GManager.instance.TT_Skill1 = false;
             GManager.instance.BK_Skill0 = false;
-            GManager.instance.BK_Skill0 = false;
+            GManager.instance.BK_Skill1 = false;
             GManager.instance.SJ_Skill0 = false;
             GManager.instance.SJ_Skill1 = false;
             GManager.instance.SJ_Skill2 = false;
