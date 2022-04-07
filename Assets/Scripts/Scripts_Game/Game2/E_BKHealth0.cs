@@ -22,14 +22,14 @@ public class E_BKHealth0 : EnemyHealthBase
         //Enemyの現在HPによってシーン推移を変える
         if (30000 < currentHP && currentHP <= 55000 && GManager.instance.BK_Skill0 == false)
         {
-            if (!GManager.instance.TT_Skill0)
+            if (!GManager.instance.BK_Skill0)
             {
                 SceneManager.LoadScene("TalkScene2_2");
             }
         }
         else if (0 < currentHP && currentHP <= 30000 && GManager.instance.BK_Skill1 == false)
         {
-            if (!GManager.instance.TT_Skill1)
+            if (!GManager.instance.BK_Skill1)
             {
                 SceneManager.LoadScene("TalkScene2_3");
             }
