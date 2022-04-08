@@ -25,22 +25,18 @@ public class E_FLM_SkillAttack0Manager : MonoBehaviour
         //難易度によって開始するコルーチンを変更
         if (GManager.instance.easy == true)
         {
-            //コルーチン開始
             StartCoroutine(SkillAttack0_3());
         }
         else if (GManager.instance.nomal == true)
         {
-            //コルーチン開始
             StartCoroutine(SkillAttack0_2());
         }
         else if (GManager.instance.hard == true)
-        {
-            //コルーチン開始
+        {   
             StartCoroutine(SkillAttack0_1());
         }
         else if (GManager.instance.veryHard == true)
         {
-            //コルーチン開始
             StartCoroutine(SkillAttack0_0());
         }
     }

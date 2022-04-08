@@ -14,7 +14,7 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
     //E_SJ_SkillAttack0_1Prefabを入れる（直流）
     public GameObject E_SJ_SkillAttack0_1Prefab;
 
-    //E_SJ_SkillAttack0_2Prefabを入れる（網流）
+    //E_SJ_SkillAttack0_2Prefabを入れる（交流）
     public GameObject E_SJ_SkillAttack0_2Prefab;
 
     //E_SJ_SkillAttack0_3Prefabを入れる（分流）
@@ -48,23 +48,19 @@ public class E_SJ_SkillAttack0Manager : MonoBehaviour
 
         //難易度によって開始するコルーチンを変更
         if (GManager.instance.easy == true)
-        {
-            //コルーチン開始
+        {   
             StartCoroutine(SkillAttack0_3());
         }
         else if (GManager.instance.nomal == true)
-        {
-            //コルーチン開始
+        {   
             StartCoroutine(SkillAttack0_2());
         }
         else if (GManager.instance.hard == true)
-        {
-            //コルーチン開始
+        {  
             StartCoroutine(SkillAttack0_1());
         }
         else if (GManager.instance.veryHard == true)
         {
-            //コルーチン開始
             StartCoroutine(SkillAttack0_0());
         }
     }

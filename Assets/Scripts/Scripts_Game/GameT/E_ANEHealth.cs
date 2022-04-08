@@ -19,7 +19,8 @@ public class E_ANEHealth : EnemyHealthBase
     {
         base.Update();
 
-        //Enemyの現在HPによってシーン推移を変える
+        ////Enemyの現在HPによって推移するTalkSceneを変える
+        //Enemyの体力が0になった場合
         if (currentHP <= 0)
         {
             //ANEの総被ダメージをリセット

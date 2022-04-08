@@ -21,6 +21,8 @@ public class E_TTHealth : EnemyHealthBase
     {
         base.Update();
 
+        ////Enemyの現在HPによって推移するTalkSceneを変える
+        //大技が発動していない場合
         if (8000 < currentHP && currentHP <= 10000 && GManager.instance.TT_Skill0 == false)
         {
             if (!GManager.instance.TT_Skill0)
@@ -28,6 +30,7 @@ public class E_TTHealth : EnemyHealthBase
                 SceneManager.LoadScene("TalkScene1_2");
             }
         }
+        //己心が発動していない場合
         else if (0 < currentHP && currentHP <= 1500 && GManager.instance.TT_Skill1 == false)
         {
             if (!GManager.instance.TT_Skill1)
@@ -35,6 +38,7 @@ public class E_TTHealth : EnemyHealthBase
                 SceneManager.LoadScene("TalkScene1_3");
             }
         }
+        //Enemyの体力が0になった場合
         else if (currentHP <= 0)
         {
             SceneManager.LoadScene("TalkScene1_5");
@@ -50,6 +54,8 @@ public class E_TTHealth : EnemyHealthBase
         float randomDecreaseDamgeRate = decreaseDamageRates[Random.Range(0, decreaseDamageRates.Length)];
 
         decreaseDamageRate = randomDecreaseDamgeRate;
-        GManager.instance.decreaseDamageRate0 = decreaseDamageRate;
+
+        //デバッグ用
+        GManager.instance.decreaseDamageRateDebug = decreaseDamageRate;
     }
 }

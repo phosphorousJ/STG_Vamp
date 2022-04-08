@@ -22,7 +22,8 @@ public class E_GCHealth : EnemyHealthBase
     {
         base.Update();
 
-        //Enemyの現在HPによってシーン推移を変える
+        ////Enemyの現在HPによって推移するTalkSceneを変える
+        //Enemyの体力が0になった場合
         if (currentHP <= 0)
         {
             SceneManager.LoadScene("TalkScene4_1");
@@ -33,12 +34,13 @@ public class E_GCHealth : EnemyHealthBase
     //被ダメ軽減割合を増加させる関数
     void DecreaseDamageRateAdd()
     {
+        //被ダメ軽減割合を負の数にしない（Enemyの被ダメ増加を防止）
         if (decreaseDamageRate < 1.0f)
         {
-            //計算用
-            GManager.instance.decreaseDamageRate0 = decreaseDamageRate + 0.2f;
-
             decreaseDamageRate += 0.2f;
+
+            //デバッグ用
+            GManager.instance.decreaseDamageRateDebug = decreaseDamageRate + 0.2f;
         }
     }
 }

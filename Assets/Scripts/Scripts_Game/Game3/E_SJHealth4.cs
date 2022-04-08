@@ -28,7 +28,8 @@ public class E_SJHealth4 : MonoBehaviour
 
         InvokeRepeating("DecreaseHealth", 5.0f, 1.0f);
 
-        GManager.instance.decreaseDamageRate0 = decreaseDamageRate;
+        //デバッグ用
+        GManager.instance.decreaseDamageRateDebug = decreaseDamageRate;
     }
 
 
@@ -37,6 +38,8 @@ public class E_SJHealth4 : MonoBehaviour
     {
         if (currentHP <= 0)
         {
+            ////Enemyの現在HPによって推移するTalkSceneを変える
+            //Enemyの体力が0になった場合
             SceneManager.LoadScene("TalkScene3_10");
         }
     }
@@ -54,8 +57,9 @@ public class E_SJHealth4 : MonoBehaviour
         EnemyHPSlider.value = currentHP / enemyHP;
 
         //被ダメージをリセット
-        GManager.instance.damage0 = 0;
+        GManager.instance.damage = 0;
 
-        GManager.instance.damage1 = 200;
+        //デバッグ用
+        GManager.instance.damageDebug = 200;
     }
 }

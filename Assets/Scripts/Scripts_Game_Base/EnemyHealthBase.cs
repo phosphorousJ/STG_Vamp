@@ -23,16 +23,17 @@ public class EnemyHealthBase: MonoBehaviour
         //HPバーを満タンにする
         EnemyHPSlider.value = 1;
 
-        GManager.instance.decreaseDamageRate0 = decreaseDamageRate;
+        //デバッグ用
+        GManager.instance.decreaseDamageRateDebug = decreaseDamageRate;
     }
 
 
     protected virtual void Update()
     {
-        if (GManager.instance.damage0 != 0)
+        if (GManager.instance.damage != 0)
         {
             //現在のHPを更新
-            currentHP -= GManager.instance.damage0 * decreaseDamageRate;
+            currentHP -= GManager.instance.damage * decreaseDamageRate;
 
             Debug.Log("Enemyの体力:" + currentHP);
 
@@ -40,7 +41,7 @@ public class EnemyHealthBase: MonoBehaviour
             EnemyHPSlider.value = currentHP / enemyHP;
 
             //被ダメージをリセット
-            GManager.instance.damage0 = 0;
+            GManager.instance.damage = 0;
         }
     }
 }

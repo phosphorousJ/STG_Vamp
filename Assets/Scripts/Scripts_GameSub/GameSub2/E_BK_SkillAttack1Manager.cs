@@ -43,22 +43,18 @@ public class E_BK_SkillAttack1Manager : MonoBehaviour
         //難易度によって開始するコルーチンを変更
         if (GManager.instance.easy == true)
         {
-            //コルーチン開始
             StartCoroutine(SkillAttack1_3());
         }
         else if (GManager.instance.nomal == true)
         {
-            //コルーチン開始
             StartCoroutine(SkillAttack1_2());
         }
         else if (GManager.instance.hard == true)
         {
-            //コルーチン開始
             StartCoroutine(SkillAttack1_1());
         }
         else if (GManager.instance.veryHard == true)
         {
-            //コルーチン開始
             StartCoroutine(SkillAttack1_0());
         }
     }

@@ -19,6 +19,8 @@ public class E_SJHealth3 : EnemyHealthBase
     {
         base.Update();
 
+        ////Enemyの現在HPによって推移するTalkSceneを変える
+        //攻撃ターン（特殊）の準備
         if (0 < currentHP && currentHP <= 5000)
         {
             SceneManager.LoadScene("TalkScene3_8");

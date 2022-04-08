@@ -16,7 +16,6 @@ public class P_NomalAttackController : MonoBehaviour
     #endregion
 
 
-    //コウモリ攻撃の移動処理
     void FixedUpdate()
     {
         //攻撃を移動させる
@@ -30,11 +29,13 @@ public class P_NomalAttackController : MonoBehaviour
         //BackWallの場合
         if (other.gameObject.tag == "BackWallTag")
         {
-            //ダメージ計算
+            //最終ダメージ計算
             int damage = power;
 
-            GManager.instance.damage0 = damage;
-            GManager.instance.damage1 = damage;
+            GManager.instance.damage = damage;
+
+            //デバッグ用
+            GManager.instance.damageDebug = damage;
 
             Destroy(this.gameObject);
             Debug.Log("Enemyに" + name + "を攻撃!!" + damage + "ダメージ!!");

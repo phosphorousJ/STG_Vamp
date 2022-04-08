@@ -19,6 +19,8 @@ public class E_SJHealth1 : EnemyHealthBase
     {
         base.Update();
 
+        ////Enemyの現在HPによって推移するTalkSceneを変える
+        //己心1が発動していない場合
         if (20000 < currentHP && currentHP <= 35000 && GManager.instance.SJ_Skill1 == false)
         {
             if (!GManager.instance.SJ_Skill1)

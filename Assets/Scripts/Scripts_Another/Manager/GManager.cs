@@ -7,17 +7,17 @@ public class GManager : MonoBehaviour
     #region//インスペクター設定
     public static GManager instance = null;
 
-    //Enemyの被ダメージ
-    public int damage0 { get; set; }
+    //Enemyの被ダメージ（EnemyのHPバー反映用）
+    public int damage { get; set; }
 
-    //Enemyの被ダメージ（総被ダメージ計算用）
-    public int damage1 { get; set; }
+    //Enemyの被ダメージ（デバッグ用）
+    public int damageDebug { get; set; }
 
     //Enemyの総被ダメージ
     public float sumDamage { get; set; }
 
-    //Enemyの被ダメ軽減割合
-    public float decreaseDamageRate0 { get; set; }
+    //Enemyの被ダメ軽減割合（デバッグ用）
+    public float decreaseDamageRateDebug { get; set; }
 
     //playerの被弾回数
     public int eAttackCount { get; set; }
@@ -28,7 +28,7 @@ public class GManager : MonoBehaviour
     public bool hard = false;
     public bool veryHard = false;
 
-    //Enemyが大技を発動したのか判定
+    //Enemyが大技・己心を発動したのか判定
     public bool FLM_Skill0 = false;
     public bool FLM_Skill1 = false;
 
@@ -61,14 +61,14 @@ public class GManager : MonoBehaviour
 
     void Update()
     {
-        if (damage1 != 0)
+        if (damageDebug != 0)
         {
-            //総被ダメージを計算
-            sumDamage += damage1 * decreaseDamageRate0;
+            //総被ダメージを計算（デバッグ用）
+            sumDamage += damageDebug * decreaseDamageRateDebug;
             Debug.Log("Enemyの総被ダメージ:" + sumDamage);
 
             //被ダメージをリセット
-            damage1 = 0;
+            damageDebug = 0;
         }
     }
 }

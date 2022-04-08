@@ -67,23 +67,19 @@ public class E_SJ_SkillAttack2Manager : MonoBehaviour
 
         //難易度によって開始するコルーチンを変更
         if (GManager.instance.easy == true)
-        {
-            //コルーチン開始
+        {   
             StartCoroutine(SkillAttack2_3());
         }
         else if (GManager.instance.nomal == true)
-        {
-            //コルーチン開始
+        {   
             StartCoroutine(SkillAttack2_2());
         }
         else if (GManager.instance.hard == true)
-        {
-            //コルーチン開始
+        {   
             StartCoroutine(SkillAttack2_1());
         }
         else if (GManager.instance.veryHard == true)
         {
-            //コルーチン開始
             StartCoroutine(SkillAttack2_0());
         }
     }
