@@ -14,21 +14,18 @@ public class Button_Retry1_0 : MonoBehaviour
         {
             firstPush = true;
 
-            //Enemyの被ダメージ量によって推移するGameSceneを分岐させる
+            //Enemyの被ダメージ量によって推移するGameScene（Enemyの残りHPとPlayerの残機・攻撃ストックは引き継がれている）を変える
             if (0 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 5000)
             {
                 SceneManager.LoadScene("GameScene1_0");
-                Debug.Log("通常0");
             }
             else if (5000 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 13500)
             {
                 SceneManager.LoadScene("GameScene1_0");
-                Debug.Log("通常1");
             }
             else if (13500 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 15000)
             {
                 SceneManager.LoadScene("GameScene1_0");
-                Debug.Log("通常2");
             }
         }
     }
