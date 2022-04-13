@@ -50,6 +50,15 @@ public class P_B_SkillAttackController : MonoBehaviour
 
             //相殺したE_NomalAttackの数を更新
             eNomalAttackNum++;
+
+            //B攻撃の限界相殺数
+            int P_B_SkillAttackDelNum = power / 50;
+
+            //限界相殺数に達した場合、攻撃を破棄（ダメージ値が0または負の数になるのを防ぐ）
+            if (eNomalAttackNum == P_B_SkillAttackDelNum)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
         //通常攻撃（Enemy_BKとEnemy_MC）の場合

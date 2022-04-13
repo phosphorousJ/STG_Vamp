@@ -14,7 +14,7 @@ public class Button_Retry1_0 : MonoBehaviour
         {
             firstPush = true;
 
-            //Enemyの被ダメージ量によって推移するGameScene（Enemyの残りHPとPlayerの残機・攻撃ストックは引き継がれている）を変える
+            //Enemyの被ダメージ量によって推移するGameScene（Enemyの残りHPのみ引き継ぐ）を変える
             if (0 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 5000)
             {
                 SceneManager.LoadScene("GameScene1_0");

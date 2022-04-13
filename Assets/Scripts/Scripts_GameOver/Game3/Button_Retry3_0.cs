@@ -14,7 +14,7 @@ public class Button_Retry3_0 : MonoBehaviour
         {
             firstPush = true;
 
-            ////Enemyの被ダメージ量によって推移するGameScene（Enemyの残りHPとPlayerの残機・攻撃ストックは引き継がれている）を変える
+            ////Enemyの被ダメージ量によって推移するGameScene（Enemyの残りHPのみ引き継ぐ）を変える
             //Enemy（SJ）は通常攻撃が変わるため推移するGameSceneを変えている
             if (0 <= GManager.instance.sumDamage && GManager.instance.sumDamage < 5000)
             {
